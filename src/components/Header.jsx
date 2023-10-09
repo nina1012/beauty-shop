@@ -77,10 +77,11 @@ export default function Header() {
           </div>
           <div
             className={clsx(
-              'header-box flex !md:flex text-base items-center md:w-full md:justify-between w-[230px]',
+              'header-box flex !md:flex text-base items-center md:w-full md:justify-between w-[230px] h-full md:h-auto',
               !expanded && 'hidden md:flex',
               expanded &&
-                'flex-col md:flex-row absolute md:relative top-0 left-0 bg-lightBeige/90 md:bg-transparent h-full md:h-auto p-10'
+                'flex-col md:flex-row absolute md:relative top-0 left-0 bg-lightBeige/90 md:bg-transparent h-full md:h-auto p-10 md:p-0',
+              'fixed'
             )}
           >
             <ul className="navigation uppercase w-full flex flex-col items-start md:items-center md:flex-row text-sm md:text-xs md:ml-4">

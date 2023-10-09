@@ -1,11 +1,21 @@
-import Image from 'next/image';
-import { Container } from './components/Container';
-import Header from './components/Header';
+import Header from '../components/Header';
+
+export const metadata = {
+  description: 'Beauty Shop',
+  keywords: [
+    'beauty',
+    'shop',
+    'e-commerce',
+    'nextjs',
+    'react',
+    'tailwind',
+  ],
+};
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <h1>HOMe</h1>
     </>
   );
 }
