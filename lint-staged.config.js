@@ -1,7 +1,3 @@
 module.exports = {
-  '*.{ts,tsx}': [
-    'npm run lint',
-    "bash -c 'npm run types:check'",
-    'npm run format:check',
-  ],
+  '*.{js,jsx}': ['npm run lint', 'npm run format:check'],
 };
