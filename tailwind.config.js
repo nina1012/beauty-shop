@@ -8,13 +8,11 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial':
-          'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        mainBg: "url('@/images/main-bg.jpeg')",
+        mainBgSm: "url('@/images/main-bg-sm.jpg')",
       },
       colors: {
-        darkgray: '#222',
+        darkGray: '#222',
         pink: '#d05278',
         lightBeige: '#fcedeae6',
       },

@@ -8,13 +8,13 @@ export function Container({
   return (
     <Component
       className={clsx(
-        'mx-auto min-w-[320px] w-full max-w-7xl',
+        'mx-auto min-w-[320px] w-full max-w-7xl px-4 md:px-5',
         className
       )}
     >
-      <div className="mx-auto max-w-2xl lg:max-w-none">
-        {children}
-      </div>
+      {/* <div className="mx-auto max-w-2xl lg:max-w-none"> */}
+      {children}
+      {/* </div> */}
     </Component>
   );
 }
