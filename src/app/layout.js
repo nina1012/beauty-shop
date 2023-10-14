@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import './styles/globals.css';
+import '../styles/globals.css';
 import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
 
