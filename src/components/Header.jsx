@@ -16,7 +16,7 @@ import { useState, useEffect } from 'react';
 export default function Header() {
   const navItems = [
     {
-      path: '/home',
+      path: '/',
       navigationItem: 'Home',
     },
     {
@@ -59,7 +59,7 @@ export default function Header() {
     },
   ];
 
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
 
   const handleScroll = () => {

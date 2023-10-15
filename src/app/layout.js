@@ -20,11 +20,13 @@ export default function RootLayout({ children }) {
       <body
         className={clsx(
           inter.className,
-          'flex min-h-full flex-col'
+          'flex min-h-full flex-col bg-white h-full'
         )}
       >
         <Header />
-        {children}
+        <main className="content min-w-[320px] text-left w-full">
+          {children}
+        </main>
         {/* <Footer/>{children} */}
       </body>
     </html>
