@@ -20,10 +20,6 @@ export default function Header() {
       navigationItem: 'Home',
     },
     {
-      path: '/pages',
-      navigationItem: 'Pages',
-    },
-    {
       path: '/shop',
       navigationItem: 'Shop',
     },
