@@ -115,8 +115,12 @@ export const ProductItems = () => {
             slidesPerView: 3,
             spaceBetween: 40,
           },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
         }}
-        loop
+        loop={true}
         modules={[Navigation]}
         className="mySwiper"
       >
