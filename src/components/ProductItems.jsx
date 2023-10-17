@@ -46,6 +46,7 @@ export const ProductItem = ({ product }) => {
           width={img?.width}
           height={img?.height}
           alt={name}
+          className="w-full"
         />
         <div className="product-item-overlay group absolute top-0 left-0 w-full h-full transition-all hover:bg-[rgba(34,34,34,0.7)] p-8 z-10">
           <Link href={`/product/${id}`}>
