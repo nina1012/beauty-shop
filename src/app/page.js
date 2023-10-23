@@ -33,6 +33,11 @@ import { Container } from '@/components/Container';
 import clsx from 'clsx';
 import { Section } from '@/components/Section';
 
+import blogImg1 from '@/images/blog-img1.jpg';
+import blogImg2 from '@/images/blog-img2.jpg';
+
+import blogDateDecor from '@/images/blog-date-decor.png';
+
 function Trending() {
   const tabs = [
     'Make Up',
@@ -51,11 +56,6 @@ function Trending() {
         <div className="section-top mb-5 md:mb-14 text-center text-darkGray">
           <span className="text-[40px] md:text-6xl text-pink"></span>
           <h2 className="text-[40px] md:text-5xl lg:text-6xl my-5"></h2>
-          <p className="max-w-[450px] w-full mt-8 text-sm md:text-base text-gray-600">
-            Nourish your skin with toxin-free cosmetic
-            products. With the offers that you can&apos;t
-            refuse.
-          </p>
         </div>
         <div className="trending-tabs text-gray-500 text-base w-full">
           <ul className="tabs mb-10 w-full flex flex-wrap flex-col md:flex-row md:justify-center">
@@ -310,6 +310,91 @@ function InfoBlocks() {
   );
 }
 
+function LatestNews() {
+  const blogs = [
+    {
+      id: 2323,
+      image: blogImg1,
+      heading: 'Perfumes, perfumed or eau de toilette?',
+      description:
+        ' Nourish your skin with toxin-free cosmetic products. With the offers that yo skin with toxin-free cosmetic products that you can’t refuse.',
+    },
+    {
+      id: 23225,
+      image: blogImg2,
+      heading: 'Best multi-step skin care treatment',
+      description:
+        ' Nourish your skin with toxin-free cosmetic products. With the offers that yo skin with toxin-free cosmetic products that you can’t refuse.',
+    },
+  ];
+  return (
+    <Section
+      subHeading="Our blog"
+      heading="the latest news at BeautyShop"
+    >
+      <Container>
+        <div className="blog-items flex flex-col md:flex-row gap-8">
+          {blogs?.map(
+            ({ id, image, heading, description }) => (
+              <div
+                key={id}
+                className="blog-item md:w-1/2"
+              >
+                <div className="blog-item-img h-[220px] lg:h-[300px] relative">
+                  <Link
+                    href={`/blog/${id}`}
+                    className="hover:opacity-80 transition-all"
+                  >
+                    <Image
+                      src={image}
+                      width={image.width}
+                      height={image.height}
+                      alt=""
+                      className="w-full h-full object-cover"
+                    />
+                    <span
+                      style={{
+                        backgroundImage: `url(${blogDateDecor.src})`,
+                      }}
+                      className="absolute w-[77px] h-[66px] right-[35px] top-[23px] flex flex-col text-center justify-center items-center z-[1] bg-center bg-no-repeat"
+                    >
+                      june
+                      <span className="text-2xl font-semibold">
+                        21
+                      </span>
+                    </span>
+                  </Link>
+                </div>
+                <div className="blog-item-title  md:text-4xl text-[#666] transition-all">
+                  <Link
+                    className="block my-3 text-[#222] text-[22px]  hover:text-pink"
+                    href={`/blog/${id}`}
+                  >
+                    {heading}
+                  </Link>
+                  <p className="mb-5 text-sm">
+                    {description}
+                  </p>
+                  <Link
+                    href={`blog/${id}`}
+                    className="flex gap-2 group items-center text-sm text-pink transition-all origin-center"
+                  >
+                    Read More
+                    <AiOutlineArrowRight className="group-hover:translate-x-2 transition-all" />
+                  </Link>
+                </div>
+              </div>
+            )
+          )}
+        </div>
+      </Container>
+      <div className="latest-news-button mt-10 md:mt-16 text-center">
+        <Button href="/blog">Blog</Button>
+      </div>
+    </Section>
+  );
+}
+
 export const metadata = {
   description: 'Beauty Shop',
   keywords: [
@@ -361,6 +446,7 @@ export default function Home() {
       <Advantages />
       <TopCategories />
       <InfoBlocks />
+      <LatestNews />
     </>
   );
 }
