@@ -161,11 +161,11 @@ function Advantages() {
   return (
     <div className="advantages pt-16">
       <Container>
-        <div className="advantages-items gap-4 flex flex-col justify-center items-center md:flex-row">
+        <div className="advantages-items gap-4 grid md:grid-cols-3 justify-center items-center md:flex-row">
           {items?.map((item) => (
             <div
               key={item?.name}
-              className="advantages-item mx-10 text-center relative"
+              className="advantages-item px-2 text-center relative"
             >
               <div
                 className={clsx(
@@ -180,7 +180,7 @@ function Advantages() {
               <h4 className="text-3xl capitalize mb-2">
                 {item?.name}
               </h4>
-              <p className="max-w-[60%] md:max-w-full mx-auto md:mx-0 md:w-full text-[#666]">
+              <p className="mx-auto md:mx-0 md:w-full text-[#666]">
                 {item?.description}
               </p>
             </div>
@@ -241,38 +241,57 @@ function TopCategories() {
 }
 
 function InfoBlocks() {
+  const infoBlocks = [
+    {
+      infoBlockBgImg: itemImg1?.src,
+      image: itemImg2,
+      subHeading: 'Check this out',
+      heading: 'new collections for delicate skin',
+      description:
+        'Nourish your skin with toxin-free cosmetic products. With the offers that you can’t refuse.',
+    },
+    {
+      infoBlockBgImg: itemImg3?.src,
+      image: itemImg4,
+      subHeading: 'about us',
+      heading: 'who we are',
+      description:
+        'Nourish your skin with toxin-free cosmetic products. With the offers that you can’t refuse.',
+    },
+  ];
   return (
-    <div className="info-blocks pt-8 md:pt-10 flex flex-col">
-      <div
-        style={{
-          backgroundImage: `url(${itemImg1?.src})`,
-        }}
-        className="info-blocks-item relative flex justify-center bg-lightPurple bg-no-repeat bg-transparent md:bg-cover"
-      >
-        <Container className="flex static flex-col md:flex-row justify-end w-full self-end">
-          <div className="info-item-img w-full md:w-1/2 absolute flex top-0 left-0 h-full">
-            <Image
-              src={itemImg2?.src}
-              width={itemImg2?.width}
-              height={itemImg2?.height}
-              alt=""
-              className="object-fill w-full h-full"
-            />
-          </div>
-          <div className="info-item-text w-full md:w-1/2 py-44 md:px-10">
-            <div className="section-top !text-left text-darkGray">
-              <span className="text-[40px] md:text-6xl text-pink">
-                Check this out
+    <div className="info-blocks pt-8 md:pt-10">
+      {infoBlocks?.map((block, idx) => (
+        <div
+          key={idx}
+          style={{
+            backgroundImage: `url(${block.infoBlockBgImg})`,
+          }}
+          className={clsx(
+            'info-blocks-item relative justify-center md:bg-no-repeat lg:bg-cover !bg-none odd:bg-lightPurple even:bg-lightBeige'
+          )}
+        >
+          <Container className="pt-10 flex flex-col lg:flex-row px-4 w-full lg:px-0 lg:pt-0">
+            <div className="info-block-img relative w-full h-[335px] lg:h-full lg:absolute lg:top-0 lg:left-1/2 lg:w-1/2">
+              <Image
+                src={block.image?.src}
+                alt=""
+                height={block.image.height}
+                width={block.image.width}
+                className="!w-full !h-full object-cover"
+              />
+            </div>
+            <div className="info-block-text pt-12 py-10 text-[#666] pl-0 lg:py-48 lg:px-10 lg:w-1/2">
+              <span className="capitalize text-pink text-4xl">
+                {block.subHeading}
               </span>
-              <h2 className="text-[40px] md:text-5xl lg:text-6xl my-5">
-                New Collection For Delicate Skin
+              <h2 className="text-4xl text-[#222] md:text-5xl capitalize my-2">
+                {block.heading}
               </h2>
-              <p className="max-w-[450px] w-full mt-8 text-base md:text-lg leading-[150%] text-gray-600">
-                Nourish your skin with toxin-free cosmetic
-                products. With the offers that you
-                can&apos;t refuse.
+              <p className="description text-xl max-w-[456px]">
+                {block.description}
               </p>
-              <p className="max-w-[450px] w-full mt-8 text-sm md:text-base leading-[170%] text-gray-600">
+              <p className="mt-2 lg:my-4 text-base">
                 Non aliqua reprehenderit reprehenderit
                 culpa laboris nulla minim anim velit
                 adipisicing ea aliqua alluptate sit do
@@ -282,59 +301,11 @@ function InfoBlocks() {
                 do.Non aliqua reprehenderit reprehenderit
                 culpa laboris nulla minim.
               </p>
-              <Button href="/shop" className="mt-8">
-                Shop now
-              </Button>
+              <Button className="mt-8">Shop now</Button>
             </div>
-          </div>
-        </Container>
-      </div>
-      <div
-        style={{
-          backgroundImage: `url(${itemImg4?.src})`,
-        }}
-        className="info-blocks-item relative flex justify-center bg-lightPurple bg-no-repeat bg-left bg-cover -z-1"
-      >
-        <Container className="flex static md:flex-row flex-row-reverse justify-start w-full self-end">
-          <div className="info-item-img w-full md:w-1/2 absolute flex top-0 left-0 h-full">
-            <Image
-              src={itemImg3?.src}
-              width={itemImg3?.width}
-              height={itemImg3?.height}
-              alt=""
-              className="object-fill w-full h-full"
-            />
-          </div>
-          <div className="info-item-text w-full md:w-1/2 py-44 md:px-10">
-            <div className="section-top !text-left text-darkGray z-2 relative">
-              <span className="text-[40px] md:text-6xl text-pink">
-                About us
-              </span>
-              <h2 className="text-[40px] md:text-5xl lg:text-6xl my-5">
-                Who we are
-              </h2>
-              <p className="max-w-[450px] w-full mt-8 text-base md:text-lg leading-[150%] text-gray-600">
-                Nourish your skin with toxin-free cosmetic
-                products. With the offers that you
-                can&apos;t refuse.
-              </p>
-              <p className="max-w-[450px] w-full mt-8 text-sm md:text-base leading-[170%] text-gray-600">
-                Non aliqua reprehenderit reprehenderit
-                culpa laboris nulla minim anim velit
-                adipisicing ea aliqua alluptate sit do
-                do.Non aliqua reprehenderit reprehenderit
-                culpa laboris nulla minim anim velit
-                adipisicing ea aliqua alluptate sit do
-                do.Non aliqua reprehenderit reprehenderit
-                culpa laboris nulla minim.
-              </p>
-              <Button href="/about" className="mt-8">
-                About us
-              </Button>
-            </div>
-          </div>
-        </Container>
-      </div>
+          </Container>
+        </div>
+      ))}
     </div>
   );
 }
