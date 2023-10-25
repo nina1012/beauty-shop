@@ -12,6 +12,7 @@ import {
 } from 'react-icons/ai';
 import clsx from 'clsx';
 import { useState, useEffect } from 'react';
+import { Container } from './Container';
 
 export default function Header() {
   const navItems = [
@@ -96,70 +97,72 @@ export default function Header() {
               'fixed top-0 left-0 w-full pt-5 py-2 bg-lightBeige'
           )}
         >
-          <div className="header-logo">
-            <Link href="/">
-              <HeaderLogo />
-            </Link>
-          </div>
-          <div
-            className={clsx(
-              expanded
-                ? 'header-box fixed top-0 left-0 w-[230px] h-full bg-white md:bg-transparent text-darkGray z-[11] flex flex-col justify-start items-start pt-12 px-8 md:pt-0 md:px-0 md:relative md:w-full md:flex-row md:h-auto'
-                : 'hidden md:flex md:w-full'
-            )}
-          >
-            <ul className="navigation uppercase w-full flex flex-col items-start md:items-center md:flex-row text-sm md:text-xs md:ml-4">
-              {navItems.map((item) => (
-                <li
-                  key={item.path}
-                  className={clsx(
-                    'mb-4 md:my-0 justify-start md:justify-stretch mx-2 hover:text-pink transition-colors'
-                  )}
-                >
-                  <Link href={item?.path}>
-                    {item?.navigationItem}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <hr
+          <Container className="flex items-center justify-between px-0">
+            <div className="header-logo">
+              <Link href="/">
+                <HeaderLogo />
+              </Link>
+            </div>
+            <div
               className={clsx(
-                expanded &&
-                  'block bg-black w-full h-[2px] my-4 md:hidden'
+                expanded
+                  ? 'header-box fixed top-0 left-0 w-[230px] h-full bg-white md:bg-transparent text-darkGray z-[11] flex flex-col justify-start items-start pt-12 px-8 md:pt-0 md:px-0 md:relative md:w-full md:flex-row md:h-auto'
+                  : 'hidden md:flex md:w-full'
               )}
-            />
-            <ul className="options flex justify-between md:justify-normal w-full md:w-auto">
-              {options?.map((opt) => (
-                <li
-                  key={opt.path}
-                  className="md:ml-4 text-base hover:text-pink transition-colors"
-                >
-                  <Link href={opt.path}>
-                    {opt.path.includes('cart') ? (
-                      <div className="relative">
-                        <AiOutlineShoppingCart />
-                        <span className="absolute -top-2 -right-2 w-4 h-4 flex justify-center items-center rounded-full bg-pink text-[10px] text-white">
-                          0
-                        </span>
-                      </div>
-                    ) : (
-                      opt.icon
+            >
+              <ul className="navigation uppercase w-full flex flex-col items-start md:items-center md:flex-row text-sm md:text-xs md:ml-4">
+                {navItems.map((item) => (
+                  <li
+                    key={item.path}
+                    className={clsx(
+                      'mb-4 md:my-0 justify-start md:justify-stretch mx-2 hover:text-pink transition-colors'
                     )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <button
-            onClick={() => setExpanded(!expanded)}
-            className="block md:hidden"
-          >
-            {expanded ? (
-              <AiOutlineClose />
-            ) : (
-              <RxHamburgerMenu className="text-xl" />
-            )}
-          </button>
+                  >
+                    <Link href={item?.path}>
+                      {item?.navigationItem}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <hr
+                className={clsx(
+                  expanded &&
+                    'block bg-black w-full h-[2px] my-4 md:hidden'
+                )}
+              />
+              <ul className="options flex justify-between md:justify-normal w-full md:w-auto">
+                {options?.map((opt) => (
+                  <li
+                    key={opt.path}
+                    className="md:ml-4 text-base hover:text-pink transition-colors"
+                  >
+                    <Link href={opt.path}>
+                      {opt.path.includes('cart') ? (
+                        <div className="relative">
+                          <AiOutlineShoppingCart />
+                          <span className="absolute -top-2 -right-2 w-4 h-4 flex justify-center items-center rounded-full bg-pink text-[10px] text-white">
+                            0
+                          </span>
+                        </div>
+                      ) : (
+                        opt.icon
+                      )}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="block md:hidden"
+            >
+              {expanded ? (
+                <AiOutlineClose />
+              ) : (
+                <RxHamburgerMenu className="text-xl" />
+              )}
+            </button>
+          </Container>
         </div>
       </header>
     </header>

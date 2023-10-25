@@ -37,6 +37,15 @@ import blogImg1 from '@/images/blog-img1.jpg';
 import blogImg2 from '@/images/blog-img2.jpg';
 
 import blogDateDecor from '@/images/blog-date-decor.png';
+import subscribeDecor from '@/images/subscribe-img-decor.png';
+import subscribeImage from '@/images/subscribe-img.png';
+
+import instaPhoto1 from '@/images/insta-photo1.jpeg';
+import instaPhoto2 from '@/images/insta-photo2.jpg';
+import instaPhoto3 from '@/images/insta-photo3.jpg';
+import instaPhoto4 from '@/images/insta-photo4.jpg';
+import instaPhoto5 from '@/images/insta-photo5.jpg';
+import instaPhoto6 from '@/images/insta-photo6.jpg';
 
 function Trending() {
   const tabs = [
@@ -271,7 +280,7 @@ function InfoBlocks() {
             'info-blocks-item relative justify-center md:bg-no-repeat lg:bg-cover !bg-none odd:bg-lightPurple even:bg-lightBeige'
           )}
         >
-          <Container className="pt-10 flex flex-col lg:flex-row px-4 w-full lg:px-0 lg:pt-0">
+          <Container className="pt-10 flex flex-col lg:flex-row w-full lg:px-0 lg:pt-0">
             <div className="info-block-img relative w-full h-[335px] lg:h-full lg:absolute lg:top-0 lg:left-1/2 lg:w-1/2">
               <Image
                 src={block.image?.src}
@@ -281,7 +290,7 @@ function InfoBlocks() {
                 className="!w-full !h-full object-cover"
               />
             </div>
-            <div className="info-block-text pt-12 py-10 text-[#666] pl-0 lg:py-48 lg:px-10 lg:w-1/2">
+            <div className="info-block-text pt-12 py-10 text-[#666] pl-0 lg:py-48 lg:px-5 lg:w-1/2">
               <span className="capitalize text-pink text-4xl">
                 {block.subHeading}
               </span>
@@ -332,7 +341,7 @@ function LatestNews() {
       subHeading="Our blog"
       heading="the latest news at BeautyShop"
     >
-      <Container>
+      <Container className="mx-auto !px-0">
         <div className="blog-items flex flex-col md:flex-row gap-8">
           {blogs?.map(
             ({ id, image, heading, description }) => (
@@ -395,6 +404,83 @@ function LatestNews() {
   );
 }
 
+function Subscribe() {
+  return (
+    <div className="subscribe bg-lightBeige md:bg-white overflow-hidden">
+      <Container className="">
+        <div className="subscribe-form flex mx-4 flex-col-reverse md:flex-row md:items-center pt-12 md:pt-0 bg-lightBeige">
+          <div className="subscribe-img relative md:w-[350px]">
+            <Image
+              src={subscribeImage}
+              width={subscribeImage?.width}
+              height={subscribeImage?.height}
+              alt="Subscribe image"
+              className="relative z-[1] md:max-w-full"
+            />
+            <div
+              style={{
+                backgroundImage: `url(${subscribeDecor.src})`,
+              }}
+              className="absolute top-0 -left-7 -md:translate-y-1/2 md:left-0 h-[450px] w-[520px] bg-contain bg:no-repeat -z-1"
+            ></div>
+          </div>
+          <form className="text-[#222] z-10 relative">
+            <h3 className="text-3xl md:text-[40px]">
+              Stay in touch
+            </h3>
+            <p className="text-[#666] my-2">
+              Nourish your skin with toxin-free cosmetic
+              products.
+            </p>
+            <div className="form-row mt-5 md:mt-8 flex flex-col md:flex-row md:items-stretch md:w-full md:gap-2 md:h-16">
+              <div className="w-full mb-4 h-full md:w-4/6 md:mb-0">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="py-4 px-5 h-full w-full"
+                />
+              </div>
+              <Button className="w-full justify-center items-center md:w-2/6 md:h-full">
+                Subscribe
+              </Button>
+            </div>
+          </form>
+        </div>
+      </Container>
+    </div>
+  );
+}
+
+function InstaPhotos() {
+  const instaPhotos = [
+    instaPhoto1,
+    instaPhoto2,
+    instaPhoto3,
+    instaPhoto4,
+    instaPhoto5,
+    instaPhoto6,
+  ];
+  return (
+    <div className="insta-photos mt-16 md:mt-28 grid grid-cols-2 md:grid-cols-3">
+      {instaPhotos?.map((photo) => (
+        <Link
+          href="/"
+          key={photo}
+          className="w-full h-full"
+        >
+          <Image
+            src={photo}
+            width={photo?.width}
+            height={photo?.height}
+            alt="Insta photo"
+            className="w-full h-full"
+          />
+        </Link>
+      ))}
+    </div>
+  );
+}
+
 export const metadata = {
   description: 'Beauty Shop',
   keywords: [
@@ -417,7 +503,7 @@ export default function Home() {
           }}
           className="main-block relative z-1 min-h-screen flex items-center justify-start w-full h-full py-[100px] bg-no-repeat bg-cover bg-center z-1"
         >
-          <Container className="lg:px-10 text-darkGray z-[1]">
+          <Container className="lg:px-5 text-darkGray z-[1]">
             <div className="max-w-[575px] lg:max-w-[650px]">
               <span className="text-[45px] md:text-6xl text-pink">
                 Professional
@@ -447,6 +533,8 @@ export default function Home() {
       <TopCategories />
       <InfoBlocks />
       <LatestNews />
+      <Subscribe />
+      <InstaPhotos />
     </>
   );
 }

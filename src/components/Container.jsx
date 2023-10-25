@@ -8,7 +8,7 @@ export function Container({
   return (
     <Component
       className={clsx(
-        'wrapper w-full px-4 md:px-5 lg:max-w-[1220px]',
+        'wrapper justify-between w-full px-4 md:px-5 lg:mx-auto lg:max-w-[1220px]',
         className
       )}
     >
