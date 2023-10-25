@@ -1,11 +1,6 @@
 import Image from 'next/image';
 
 import mainBlockDecor from '@/images/main-block-decor.png';
-import logo1 from '@/images/main-logo1.svg';
-import logo2 from '@/images/main-logo2.svg';
-import logo3 from '@/images/main-logo3.svg';
-import logo4 from '@/images/main-logo4.svg';
-import logo5 from '@/images/main-logo5.svg';
 
 import topCat1 from '@/images/top-categories-img1.jpg';
 import topCat2 from '@/images/top-categories-img2.jpg';
@@ -39,13 +34,9 @@ import blogImg2 from '@/images/blog-img2.jpg';
 import blogDateDecor from '@/images/blog-date-decor.png';
 import subscribeDecor from '@/images/subscribe-img-decor.png';
 import subscribeImage from '@/images/subscribe-img.png';
-
-import instaPhoto1 from '@/images/insta-photo1.jpeg';
-import instaPhoto2 from '@/images/insta-photo2.jpg';
-import instaPhoto3 from '@/images/insta-photo3.jpg';
-import instaPhoto4 from '@/images/insta-photo4.jpg';
-import instaPhoto5 from '@/images/insta-photo5.jpg';
-import instaPhoto6 from '@/images/insta-photo6.jpg';
+import InstaPhotos from '@/components/InstaPhotos';
+import MainLogos from '@/components/MainLogos';
+import Discount from '@/components/Discount';
 
 function Trending() {
   const tabs = [
@@ -81,68 +72,6 @@ function Trending() {
         </div>
       </div>
     </Section>
-  );
-}
-
-function MainLogos() {
-  const logos = [logo1, logo2, logo3, logo4, logo5];
-  return (
-    <div className="main-logos flex justify-center items-center lg:justify-evenly pb-9 lg:pb-32 flex-wrap">
-      {logos?.map((logo) => (
-        <Link
-          key={logo.src}
-          href="/"
-          className="max-w-[100px] lg:max-w-[110px] mb-6 mx-6"
-        >
-          <Image
-            src={logo}
-            width={logo?.width}
-            height={logo?.height}
-            alt="Logo"
-            className="!w-full !h-full"
-          />
-        </Link>
-      ))}
-    </div>
-  );
-}
-
-function Discount() {
-  return (
-    <div className="discount">
-      <div
-        style={{
-          backgroundImage: `url(${discountBg.src})`,
-        }}
-        className="main-block relative z-1 min-h-screen flex items-center justify-start w-full h-full py-[100px] bg-no-repeat bg-cover bg-center z-1"
-      >
-        <Container className="lg:px-10 text-darkGray z-[1]">
-          <div className="max-w-[465px] text-right md:text-left ml-auto">
-            <span className="text-[45px] md:text-6xl text-pink">
-              Discount
-            </span>
-            <h2 className="text-6xl	md:text-[83px] mt-1 mb-8">
-              Get Your{' '}
-              <span
-                style={{
-                  backgroundImage: `url(${linkBg.src})`,
-                }}
-                className="text-pink relative bg-no-repeat bg-contain bg-center"
-              >
-                50%
-              </span>{' '}
-              Off
-            </h2>
-            <p className="max-w-[420px] text-black text-base leading-[150%] ml-auto md:ml-0">
-              Nourish your skin with toxin-free cosmetic
-              products. With the offers that you
-              can&apos;t refuse.
-            </p>
-            <Button className="mt-8">Get now</Button>
-          </div>
-        </Container>
-      </div>
-    </div>
   );
 }
 
@@ -451,36 +380,6 @@ function Subscribe() {
   );
 }
 
-function InstaPhotos() {
-  const instaPhotos = [
-    instaPhoto1,
-    instaPhoto2,
-    instaPhoto3,
-    instaPhoto4,
-    instaPhoto5,
-    instaPhoto6,
-  ];
-  return (
-    <div className="insta-photos mt-16 md:mt-28 grid grid-cols-2 md:grid-cols-3">
-      {instaPhotos?.map((photo) => (
-        <Link
-          href="/"
-          key={photo}
-          className="w-full h-full"
-        >
-          <Image
-            src={photo}
-            width={photo?.width}
-            height={photo?.height}
-            alt="Insta photo"
-            className="w-full h-full"
-          />
-        </Link>
-      ))}
-    </div>
-  );
-}
-
 export const metadata = {
   description: 'Beauty Shop',
   keywords: [
@@ -528,7 +427,7 @@ export default function Home() {
       </div>
       <Trending />
       <MainLogos />
-      <Discount />
+      <Discount bgImg={discountBg} />
       <Advantages />
       <TopCategories />
       <InfoBlocks />

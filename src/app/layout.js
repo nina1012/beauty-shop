@@ -7,7 +7,10 @@ import { Footer } from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Beauty Shop',
+  title: {
+    template: '%s',
+    default: 'Beauty Shop',
+  },
   description:
     'Beauty shop is a website made using react and nextjs',
 };
@@ -29,7 +32,6 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
-        {/* <Footer/>{children} */}
       </body>
     </html>
   );
