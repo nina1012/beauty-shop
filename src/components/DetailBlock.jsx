@@ -20,7 +20,7 @@ export default function DetailBlock({ bgImg }) {
         })`,
       }}
       className={clsx(
-        'bg-no-repeat text-[#222] bg-cover relative text-center z-[1] pt-32 pb-16 md:pt-48 md:pb-28'
+        'bg-no-repeat text-[#222] bg-cover md:bg-top relative text-center z-[1] pt-32 pb-16 md:pt-48 md:pb-28'
       )}
     >
       <Container>

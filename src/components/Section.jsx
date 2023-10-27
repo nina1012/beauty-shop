@@ -6,7 +6,7 @@ export function Section({
   className,
   children,
   heading,
-  subHeading,
+  subheading,
 }) {
   return (
     <Section
@@ -18,7 +18,7 @@ export function Section({
       <Container>
         <div className="section-top mb-5 md:mb-14 text-center text-darkGray">
           <span className="text-[40px] md:text-6xl capitalize text-pink">
-            {subHeading}
+            {subheading}
           </span>
           <h2 className="text-[40px] md:text-5xl capitalize lg:text-6xl my-5">
             {heading}
