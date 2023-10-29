@@ -6,7 +6,7 @@ import bgImage from '@/images/detail-main-bg.jpeg';
 import { Container } from './Container';
 import Link from 'next/link';
 
-export default function DetailBlock({ bgImg }) {
+export default function DetailBlock({ bgImg, notFound }) {
   const pathname = usePathname();
   const page =
     pathname.replace('/', '')[0].toUpperCase() +
@@ -26,17 +26,21 @@ export default function DetailBlock({ bgImg }) {
       <Container>
         <div className="content">
           <h1 className="text-6xl mb-3 lg:text-7xl">
-            {page}
+            {notFound ? '404 Page' : page}
           </h1>
-          <ul className="breadcrumbs flex flex-wrap justify-center">
-            <li className="mx-3">
-              <Link href="/">Home</Link>
-            </li>
-            <span>-</span>
-            <li className="mx-3 text-pink">
-              <Link href={`/${page}`}>{page}</Link>
-            </li>
-          </ul>
+          {notFound ? (
+            <span className="text-[#666]">Oops!</span>
+          ) : (
+            <ul className="breadcrumbs flex flex-wrap justify-center">
+              <li className="mx-3">
+                <Link href="/">Home</Link>
+              </li>
+              <span>-</span>
+              <li className="mx-3 text-pink">
+                <Link href={`/${page}`}>{page}</Link>
+              </li>
+            </ul>
+          )}
         </div>
       </Container>
     </div>

@@ -97,7 +97,7 @@ export default function Header() {
               'fixed top-0 left-0 w-full pt-5 py-2 bg-lightBeige'
           )}
         >
-          <Container className="flex items-center justify-between px-0">
+          <Container className="flex items-center font-lato justify-between px-0">
             <div className="header-logo">
               <Link href="/">
                 <HeaderLogo />

@@ -10,7 +10,7 @@ import logo5 from '@/images/main-logo5.svg';
 export default function MainLogos() {
   const logos = [logo1, logo2, logo3, logo4, logo5];
   return (
-    <div className="main-logos flex justify-center items-center lg:justify-evenly pb-9 lg:pb-32 flex-wrap">
+    <div className="main-logos flex justify-center items-center xl:justify-evenly pb-9 lg:pb-32 flex-wrap">
       {logos?.map((logo) => (
         <Link
           key={logo.src}

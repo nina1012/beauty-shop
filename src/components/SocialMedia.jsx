@@ -104,7 +104,7 @@ export function SocialMedia({
       role="list"
       className={clsx(
         'flex gap-x-10 text-white/10 my-4',
-        invert ? '!text-white/10' : '!text-[#666]',
+        invert ? '!text-neutral-200' : '!text-pink',
         className
       )}
     >
@@ -116,8 +116,8 @@ export function SocialMedia({
             className={clsx(
               'transition',
               invert
-                ? 'hover:text-neutral-200'
-                : 'hover:text-neutral-700'
+                ? 'hover:text-neutral-400'
+                : 'hover:text-pink/50'
             )}
           >
             <socialMediaProfile.icon className="h-6 w-6 fill-current" />

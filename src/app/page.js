@@ -11,9 +11,7 @@ import itemImg3 from '@/images/info-item-img3.jpg';
 import itemImg4 from '@/images/info-item-img4.jpg';
 
 import mainBg from '@/images/main-bg.jpeg';
-import linkBg from '@/images/link-bg.png';
 import mainTextDecor from '@/images/main-text-decor.png';
-import topCatDecor from '@/images/top-categories-decor.png';
 
 import discountBg from '@/images/discount-bg.jpeg';
 import { Button } from '@/components/Button';
@@ -37,6 +35,8 @@ import subscribeImage from '@/images/subscribe-img.png';
 import InstaPhotos from '@/components/InstaPhotos';
 import MainLogos from '@/components/MainLogos';
 import Discount from '@/components/Discount';
+import InputField from '@/components/InputField';
+import { TopCategories } from '@/components/TopCategories';
 
 function Trending() {
   const tabs = [
@@ -49,7 +49,7 @@ function Trending() {
   ];
   return (
     <Section
-      subHeading="Cosmetics"
+      subheading="Cosmetics"
       heading="Trending Products"
     >
       <div className="section-content">
@@ -129,61 +129,12 @@ function Advantages() {
   );
 }
 
-function TopCategories() {
-  const categories = [
-    { img: topCat1, categoryName: 'SPA' },
-    { img: topCat2, categoryName: 'Nails' },
-    { img: topCat3, categoryName: 'Perfume' },
-  ];
-  return (
-    <Section
-      subHeading="Popular Collections"
-      heading="Top Categories"
-      className="top-categories [&>*]:max-w-full"
-    >
-      <div className="top-categories-items flex gap-2 -mx-5 flex-col md:flex-row">
-        {categories?.map((category) => (
-          <Link
-            key={category?.categoryName}
-            href="/categories"
-            className="relative h-full"
-          >
-            <Image
-              src={category?.img.src}
-              alt=""
-              width={category?.img?.width}
-              height={category?.img?.height}
-              className="w-full"
-            />
-            <div className="overlay-onHover opacity-0 hover:opacity-100 hover:bg-[rgba(34,34,34,0.4)] absolute top-0 left-0 w-full h-full flex flex-col gap-3 text-center justify-center items-center transition-opacity">
-              <h5
-                className={clsx(
-                  'relative flex justify-center items-center text-[#222] bg-contain bg-no-repeat bg-center text-2xl w-full h-[66px]'
-                )}
-                style={{
-                  backgroundImage: `url(${topCatDecor?.src})`,
-                }}
-              >
-                {category?.categoryName}
-              </h5>
-              <span className="text-white uppercase">
-                browse products
-                <AiOutlineArrowRight className="w-full text-[30px]" />
-              </span>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
 function InfoBlocks() {
   const infoBlocks = [
     {
       infoBlockBgImg: itemImg1?.src,
       image: itemImg2,
-      subHeading: 'Check this out',
+      subheading: 'Check this out',
       heading: 'new collections for delicate skin',
       description:
         'Nourish your skin with toxin-free cosmetic products. With the offers that you can’t refuse.',
@@ -191,7 +142,7 @@ function InfoBlocks() {
     {
       infoBlockBgImg: itemImg3?.src,
       image: itemImg4,
-      subHeading: 'about us',
+      subheading: 'about us',
       heading: 'who we are',
       description:
         'Nourish your skin with toxin-free cosmetic products. With the offers that you can’t refuse.',
@@ -221,7 +172,7 @@ function InfoBlocks() {
             </div>
             <div className="info-block-text pt-12 py-10 text-[#666] pl-0 lg:py-48 lg:px-5 lg:w-1/2">
               <span className="capitalize text-pink text-4xl">
-                {block.subHeading}
+                {block.subheading}
               </span>
               <h2 className="text-4xl text-[#222] md:text-5xl capitalize my-2">
                 {block.heading}
@@ -267,7 +218,7 @@ function LatestNews() {
   ];
   return (
     <Section
-      subHeading="Our blog"
+      subheading="Our blog"
       heading="the latest news at BeautyShop"
     >
       <Container className="mx-auto !px-0">
@@ -361,14 +312,11 @@ function Subscribe() {
               Nourish your skin with toxin-free cosmetic
               products.
             </p>
-            <div className="form-row mt-5 md:mt-8 flex flex-col md:flex-row md:items-stretch md:w-full md:gap-2 md:h-16">
-              <div className="w-full mb-4 h-full md:w-4/6 md:mb-0">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="py-4 px-5 h-full w-full"
-                />
-              </div>
+            <div className="form-row flex  mt-5 md:mt-8 flex-col md:flex-row !md:items-stretch md:w-full md:gap-2 md:h-16">
+              <InputField
+                type="email"
+                label="Enter your email"
+              />
               <Button className="w-full justify-center items-center md:w-2/6 md:h-full">
                 Subscribe
               </Button>
@@ -403,11 +351,11 @@ export default function Home() {
           className="main-block relative z-1 min-h-screen flex items-center justify-start w-full h-full py-[100px] bg-no-repeat bg-cover bg-center z-1"
         >
           <Container className="lg:px-5 text-darkGray z-[1]">
-            <div className="max-w-[575px] lg:max-w-[650px]">
-              <span className="text-[45px] md:text-6xl text-pink">
+            <div className="max-w-[575px] font-tenorSans lg:max-w-[650px]">
+              <span className="font-cursive text-[45px] md:text-6xl text-pink">
                 Professional
               </span>
-              <h1 className="text-6xl	md:text-[83px] mt-1 mb-8">
+              <h1 className="text-6xl md:text-[83px] mt-1 mb-8">
                 Beauty & Care
               </h1>
               <p className="max-w-[420px] text-black text-base leading-[150%]">
@@ -427,9 +375,27 @@ export default function Home() {
       </div>
       <Trending />
       <MainLogos />
-      <Discount bgImg={discountBg} />
+      <Discount
+        bgImg={discountBg}
+        heading="Get your"
+        extraHeading="50%"
+        subheading="discount"
+      >
+        <p className="max-w-[420px] text-black text-base !md:text-right leading-[150%] ml-auto md:ml-0">
+          Nourish your skin with toxin-free cosmetic
+          products. With the offers that you can&apos;t
+          refuse.
+        </p>
+        <Button className="mt-8">Get now</Button>
+      </Discount>
       <Advantages />
-      <TopCategories />
+      <TopCategories
+        categories={[
+          { img: topCat1, categoryName: 'SPA' },
+          { img: topCat2, categoryName: 'Nails' },
+          { img: topCat3, categoryName: 'Perfume' },
+        ]}
+      />
       <InfoBlocks />
       <LatestNews />
       <Subscribe />

@@ -7,6 +7,7 @@ import instaPhoto3 from '@/images/insta-photo3.jpg';
 import instaPhoto4 from '@/images/insta-photo4.jpg';
 import instaPhoto5 from '@/images/insta-photo5.jpg';
 import instaPhoto6 from '@/images/insta-photo6.jpg';
+import { CiInstagram } from 'react-icons/ci';
 
 export default function InstaPhotos() {
   const instaPhotos = [
@@ -23,7 +24,7 @@ export default function InstaPhotos() {
         <Link
           href="/"
           key={photo}
-          className="w-full h-full"
+          className="relative w-full h-full"
         >
           <Image
             src={photo}
@@ -32,6 +33,11 @@ export default function InstaPhotos() {
             alt="Insta photo"
             className="w-full h-full"
           />
+          <div className="overlay-onHover opacity-0 hover:opacity-100 hover:bg-[rgba(34,34,34,0.4)] absolute top-0 left-0 w-full h-full flex flex-col gap-3 text-center justify-center items-center transition-all">
+            <span className="text-white uppercase">
+              <CiInstagram className="w-full text-7xl" />
+            </span>
+          </div>
         </Link>
       ))}
     </div>

@@ -8,6 +8,9 @@ import { CiClock2, CiMapPin } from 'react-icons/ci';
 import { PiExamFill } from 'react-icons/pi';
 
 import discountBg from '@/images/discount-bg3.jpeg';
+import InputField from '@/components/InputField';
+import { Button } from '@/components/Button';
+import { InfoBoxes } from '@/components/InfoBoxes';
 
 function Map() {
   return (
@@ -15,13 +18,19 @@ function Map() {
       <iframe
         width="100%"
         height="450px"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28983.22702991677!2d90.39607920093997!3d24.76450174668472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37564f08e1564b13%3A0xdf7da0a35592c079!2sChorpara%20Bus%20Stop!5e0!3m2!1sen!2sbd!4v1638519781775!5m2!1sen!2sbd"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30144.14764475469!2d-73.97335930158819!3d40.780089088709715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258bf08488f6b%3A0x618706a9142daa0d!2sUpper%20East%20Side%2C%20New%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2srs!4v1698404571208!5m2!1sen!2srs"
       ></iframe>
     </div>
   );
 }
 
-function Details() {
+export const metadata = {
+  title: 'Contact | Beauty Shop',
+  description:
+    'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
+};
+
+export default async function Contact() {
   const details = [
     {
       icon: <CiMapPin />,
@@ -37,39 +46,10 @@ function Details() {
     },
   ];
   return (
-    <Container className="relative !-md:mt-10">
-      <div className="detail-block-items mt-8 flex flex-col flex-wrap z-[1] relative justify-between md:flex-row -md:mx-2 ">
-        {details?.map(({ icon, info }) => (
-          <div
-            key={info}
-            className="detail-block-item w-full mt-0 !mx-auto mb-3 max-w-[320px] md:max-w-[30%] flex items-center justify-between p-4 bg-lightPurple border-[1px] border-[#eee] "
-          >
-            <div className="detail-block-icon flex items-center relative justify-center w-14 h-12 mr-6 text-3xl">
-              {icon}
-              <div></div>
-            </div>
-            <div className="detail-block-info text-[#666]">
-              {info}
-            </div>
-          </div>
-        ))}
-      </div>
-    </Container>
-  );
-}
-
-export const metadata = {
-  title: 'Contact | Beauty Shop',
-  description:
-    'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
-};
-
-export default async function Contact() {
-  return (
     <>
       <DetailBlock />
-      <Details />
-      <div className="contacts-info py-12">
+      <InfoBoxes details={details} />
+      <div className="contacts-info pt-16 pb-12 md:pt-10">
         <Container className="">
           <div className="contacts-info-content flex flex-col md:flex-row gap-4 md:gap-10 lg:gap-20 md:justify-between">
             <div className="contacts-info-text">
@@ -103,7 +83,32 @@ export default async function Contact() {
         </Container>
       </div>
       <MainLogos />
-      <Discount bgImg={discountBg} />
+      <Discount
+        bgImg={discountBg}
+        subheading="Write to us"
+        heading="Leave a message"
+      >
+        <p className="max-w-[420px] text-[#666] text-base leading-[150%] ml-auto md:ml-0">
+          Nourish your skin with toxin-free cosmetic
+          products. With the offers that you can&apos;t
+          refuse.
+        </p>
+        <form className="max-w-[400px] gap-1 mt-10 flex flex-col items-end ml-auto md:ml-0 !md:mr-auto !md:justify-start md:gap-4">
+          <InputField
+            type="text"
+            label="Enter your name"
+            className=""
+          />
+          <InputField
+            type="email"
+            label="Enter your email"
+            className=""
+          />
+          <Button className="w-[140px] !flex !items-center !justify-center text-center md:self-start">
+            Send
+          </Button>
+        </form>
+      </Discount>
       <Map />
       <InstaPhotos />
     </>
