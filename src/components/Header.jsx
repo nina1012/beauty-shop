@@ -76,7 +76,7 @@ export default function Header() {
 
   return (
     <header>
-      <header className="absolute top-0 left-0 w-full z-10">
+      <header className="absolute top-0 left-0 w-full z-[15]">
         <div className="header-coupon bg-darkGray text-white/80 text-xs text-center py-3 absolute w-full h-auto">
           <span>
             30% OFF ON ALL PRODUCTS ENTER CODE: BESHOP2020
