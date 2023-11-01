@@ -1,6 +1,7 @@
 'use client';
 import { Tab } from '@headlessui/react';
 import clsx from 'clsx';
+import { TableRowHead } from './TableRowHead';
 
 function TabOrder({ tab }) {
   return (
@@ -63,18 +64,16 @@ function ProfileOrders() {
   return (
     <Tab.Panel>
       <div className="profile-orders">
-        <div className="profile-orders-row capitalize text-[#222] pb-2 mb-8 border-b-2 border-[#222] hidden md:flex justify-between md:items-center text-xl leading-[120%]">
-          {[
+        {/* <div className="profile-orders-row capitalize text-[#222] pb-2 mb-8 border-b-2 border-[#222] hidden md:flex justify-between md:items-center text-xl leading-[120%]"> */}
+        <TableRowHead
+          headings={[
             'date',
             'delivery address',
             'amount',
             'status',
-          ].map((col) => (
-            <div key={col} className="pr-10">
-              {col}
-            </div>
-          ))}
-        </div>
+          ]}
+        />
+        {/* </div> */}
         {orders.map((order) => {
           const labels = [...Object.keys(order)];
           return (

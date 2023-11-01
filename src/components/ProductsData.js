@@ -46,6 +46,7 @@ export const PRODUCT_DATA = [
         ratingStars: 5,
       },
     ],
+    status: 'in stock',
   },
   {
     type: 'sale',
@@ -87,6 +88,7 @@ export const PRODUCT_DATA = [
         ratingStars: 5,
       },
     ],
+    status: 'in stock',
   },
   {
     type: 'new',
@@ -128,6 +130,7 @@ export const PRODUCT_DATA = [
         ratingStars: 5,
       },
     ],
+    status: 'not available',
   },
   {
     type: 'new',
@@ -169,6 +172,7 @@ export const PRODUCT_DATA = [
         ratingStars: 5,
       },
     ],
+    status: 'in stock',
   },
   {
     type: 'sale',
@@ -210,5 +214,6 @@ export const PRODUCT_DATA = [
         ratingStars: 5,
       },
     ],
+    status: 'in stock',
   },
 ];
