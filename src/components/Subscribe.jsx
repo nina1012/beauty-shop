@@ -15,7 +15,7 @@ export function Subscribe({ className }) {
       )}
     >
       <Container className="">
-        <div className="subscribe-form flex mx-4 flex-col-reverse md:flex-row md:items-center pt-12 md:pt-0 bg-lightBeige">
+        <div className="subscribe-form flex mx-4 flex-col-reverse md:flex-row md:items-center pt-12 md:pt-0 md:mx-0 bg-lightBeige">
           <div className="subscribe-img relative md:w-[350px]">
             <Image
               src={subscribeImage}

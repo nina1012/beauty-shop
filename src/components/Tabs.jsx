@@ -127,10 +127,15 @@ function ProfileOrders() {
   );
 }
 
-export function Tabs({ tabs }) {
+export function Tabs({ tabs, className }) {
   return (
     <Tab.Group>
-      <Tab.List className="flex flex-col md:flex-row mb-8">
+      <Tab.List
+        className={clsx(
+          'flex flex-col md:flex-row mb-8',
+          className
+        )}
+      >
         {tabs?.map((tab) => (
           <TabOrder key={tab} tab={tab} />
         ))}
