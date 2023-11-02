@@ -1,10 +1,10 @@
-import { Container } from '@/components/Container';
+import { Container } from '@/components/layout/Container';
 import DetailBlock from '@/components/DetailBlock';
 import Image from 'next/image';
 import profileDecor from '@/images/profile-decor.jpeg';
 import { TableCart } from '@/components/TableCart';
-import InputField from '@/components/InputField';
-import { Button } from '@/components/Button';
+import InputField from '@/components/global/InputField';
+import { Button } from '@/components/global/Button';
 import { SocialMedia } from '@/components/SocialMedia';
 import InstaPhotos from '@/components/InstaPhotos';
 

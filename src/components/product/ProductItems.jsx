@@ -104,9 +104,6 @@ export const ProductItems = () => {
       <Swiper
         slidesPerView={1}
         spaceBetween={0}
-        pagination={{
-          clickable: true,
-        }}
         breakpoints={{
           640: {
             slidesPerView: 2,
@@ -123,10 +120,13 @@ export const ProductItems = () => {
         }}
         loop={true}
         modules={[Navigation]}
-        className="mySwiper"
+        className="mySwiper animate-carousel  !overflow-x-scroll"
       >
         {PRODUCT_DATA?.map((product) => (
-          <SwiperSlide key={product?.id}>
+          <SwiperSlide
+            key={product?.id}
+            className="mb-10"
+          >
             <ProductItem product={product} />
           </SwiperSlide>
         ))}

@@ -1,6 +1,6 @@
-import { Container } from '@/components/Container';
+import { Container } from '@/components/layout/Container';
 import DetailBlock from '@/components/DetailBlock';
-import Discount from '@/components/Discount';
+import Discount from '@/components/layout/Discount';
 import InstaPhotos from '@/components/InstaPhotos';
 import MainLogos from '@/components/MainLogos';
 import { SocialMedia } from '@/components/SocialMedia';
@@ -8,8 +8,8 @@ import { CiClock2, CiMapPin } from 'react-icons/ci';
 import { PiExamFill } from 'react-icons/pi';
 
 import discountBg from '@/images/discount-bg3.jpeg';
-import InputField from '@/components/InputField';
-import { Button } from '@/components/Button';
+import InputField from '@/components/global/InputField';
+import { Button } from '@/components/global/Button';
 import { InfoBoxes } from '@/components/InfoBoxes';
 
 function Map() {

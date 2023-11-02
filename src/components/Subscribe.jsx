@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { Container } from './Container';
-import InputField from './InputField';
-import { Button } from './Button';
+import { Container } from './layout/Container';
+import InputField from './global/InputField';
+import { Button } from './global/Button';
 import subscribeDecor from '@/images/subscribe-img-decor.png';
 import subscribeImage from '@/images/subscribe-img.png';
 import clsx from 'clsx';
@@ -10,7 +10,7 @@ export function Subscribe({ className }) {
   return (
     <div
       className={clsx(
-        'subscribe bg-lightBeige md:bg-white overflow-hidden',
+        'subscribe bg-lightBeige md:bg-white overflow-hidden mt-16 md:mt-28',
         className
       )}
     >

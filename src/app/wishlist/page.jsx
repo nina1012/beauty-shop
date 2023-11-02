@@ -1,7 +1,7 @@
-import { Container } from '@/components/Container';
+import { Container } from '@/components/layout/Container';
 import DetailBlock from '@/components/DetailBlock';
 import InstaPhotos from '@/components/InstaPhotos';
-import { Button } from '@/components/Button';
+import { Button } from '@/components/global/Button';
 import { Trending } from '@/components/Trending';
 import { TableCart } from '@/components/TableCart';
 

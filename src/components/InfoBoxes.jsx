@@ -1,4 +1,4 @@
-import { Container } from './Container';
+import { Container } from './layout/Container';
 
 export function InfoBoxes({ details }) {
   return (

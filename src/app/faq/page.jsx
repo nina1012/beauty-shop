@@ -1,11 +1,11 @@
 'use client';
-import { Container } from '@/components/Container';
+import { Container } from '@/components/layout/Container';
 import DetailBlock from '@/components/DetailBlock';
 import Image from 'next/image';
 import profileDecor from '@/images/profile-decor.jpeg';
-import { Button } from '@/components/Button';
+import { Button } from '@/components/global/Button';
 import { PiMagnifyingGlass } from 'react-icons/pi';
-import InputField from '@/components/InputField';
+import InputField from '@/components/global/InputField';
 import { Subscribe } from '@/components/Subscribe';
 import { FAQDisclosure } from '@/components/FAQDisclosure';
 import Link from 'next/link';

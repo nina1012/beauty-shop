@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Container } from './Container';
-import { FooterLogo } from './Logos';
-import { SocialMedia } from './SocialMedia';
+import { FooterLogo } from '../Logos';
+import { SocialMedia } from '../SocialMedia';
 
 import payment1 from '@/images/payment1.png';
 import payment2 from '@/images/payment2.png';

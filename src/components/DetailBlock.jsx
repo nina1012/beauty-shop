@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 
 import bgImage from '@/images/detail-main-bg.jpeg';
-import { Container } from './Container';
+import { Container } from './layout/Container';
 import Link from 'next/link';
 
 export default function DetailBlock({ bgImg, notFound }) {

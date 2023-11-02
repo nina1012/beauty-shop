@@ -14,17 +14,17 @@ import mainBg from '@/images/main-bg.jpeg';
 import mainTextDecor from '@/images/main-text-decor.png';
 
 import discountBg from '@/images/discount-bg.jpeg';
-import { Button } from '@/components/Button';
-import { ProductItems } from '@/components/ProductItems';
+import { Button } from '@/components/global/Button';
+import { ProductItems } from '@/components/product/ProductItems';
 import Link from 'next/link';
 
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { BiLeaf } from 'react-icons/bi';
 import { PiRecycleThin } from 'react-icons/pi';
 import { CiMedal } from 'react-icons/ci';
-import { Container } from '@/components/Container';
+import { Container } from '@/components/layout/Container';
 import clsx from 'clsx';
-import { Section } from '@/components/Section';
+import { Section } from '@/components/layout/Section';
 
 import blogImg1 from '@/images/blog-img1.jpg';
 import blogImg2 from '@/images/blog-img2.jpg';
@@ -33,7 +33,7 @@ import blogDateDecor from '@/images/blog-date-decor.png';
 
 import InstaPhotos from '@/components/InstaPhotos';
 import MainLogos from '@/components/MainLogos';
-import Discount from '@/components/Discount';
+import Discount from '@/components/layout/Discount';
 import { TopCategories } from '@/components/TopCategories';
 import { Subscribe } from '@/components/Subscribe';
 import { Trending } from '@/components/Trending';

@@ -1,11 +1,11 @@
-import { Container } from '@/components/Container';
+import { Container } from '@/components/layout/Container';
 import DetailBlock from '@/components/DetailBlock';
 import InstaPhotos from '@/components/InstaPhotos';
 import Image from 'next/image';
 import profileDecor from '@/images/profile-decor.jpeg';
 import { Tabs } from '@/components/Tabs';
 import { Subscribe } from '@/components/Subscribe';
-import { PRODUCT_DATA } from '@/components/ProductsData';
+import { PRODUCT_DATA } from '@/components/product/ProductsData';
 import Link from 'next/link';
 
 function ViewedProducts({ products }) {

@@ -1,5 +1,5 @@
-import { ProductItems } from './ProductItems';
-import { Section } from './Section';
+import { ProductItems } from './product/ProductItems';
+import { Section } from './layout/Section';
 
 export function Trending() {
   const tabs = [

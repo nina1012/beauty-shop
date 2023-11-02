@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { HeaderLogo } from './Logos';
+import { HeaderLogo } from '../Logos';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { PiMagnifyingGlassLight } from 'react-icons/pi';
 import {

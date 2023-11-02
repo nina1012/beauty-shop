@@ -1,4 +1,4 @@
-import { Container } from '@/components/Container';
+import { Container } from '@/components/layout/Container';
 import DetailBlock from '@/components/DetailBlock';
 import InstaPhotos from '@/components/InstaPhotos';
 import errorImg from '@/images/error-img.jpeg';
