@@ -1,20 +1,15 @@
 import { Container } from '@/components/Container';
 import DetailBlock from '@/components/DetailBlock';
 import InstaPhotos from '@/components/InstaPhotos';
-import { TableRowHead } from '@/components/TableRowHead';
-import Image from 'next/image';
-import Link from 'next/link';
-import { PRODUCT_DATA } from '@/components/ProductsData';
-import clsx from 'clsx';
-import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Button } from '@/components/Button';
 import { Trending } from '@/components/Trending';
+import { TableCart } from '@/components/TableCart';
 
 function Wishlist() {
   return (
     <div className="wishlist pt-16 md:pt-28">
       <Container className="">
-        <div className="table-cart -mx-4 w-[calc(100%+30px)] overflow-x-scroll">
+        {/* <div className="table-cart -mx-4 w-[calc(100%+30px)] overflow-x-scroll">
           <div className="table-cart-box min-w-[790px] md:min-w-[900px]">
             <TableRowHead
               className="!flex [&>*:first-of-type]:w-1/2 [&>*:first-of-type]:grid [&>*:first-of-type]:grid-cols-[110px,1fr] [&>*:first-of-type]:gap-x-4"
@@ -97,7 +92,8 @@ function Wishlist() {
               )
             )}
           </div>
-        </div>
+        </div> */}
+        <TableCart />
         <div className="wishlist-buttons gap-4 flex flex-col md:flex-row w-full md:w-auto mt-16 [&>*]:ml-2">
           <Button invert={true}>Clear wishlist</Button>
           <Button>Go shopping</Button>
