@@ -240,8 +240,13 @@ function LatestNews() {
           )}
         </div>
       </Container>
-      <div className="latest-news-button mt-10 md:mt-16 text-center">
-        <Button href="/blog">Blog</Button>
+      <div className="latest-news-button mt-10 md:mt-16 flex justify-center text-center">
+        <Button
+          href="/blog"
+          className="justify-center !w-auto"
+        >
+          Blog
+        </Button>
       </div>
     </Section>
   );
@@ -305,7 +310,9 @@ export default function Home() {
           products. With the offers that you can&apos;t
           refuse.
         </p>
-        <Button className="mt-8">Get now</Button>
+        <Button className="mt-8 ml-auto md:ml-0">
+          Get now
+        </Button>
       </Discount>
       <Advantages />
       <TopCategories

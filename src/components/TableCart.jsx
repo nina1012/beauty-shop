@@ -25,19 +25,26 @@ function TableRow({ children }) {
   );
 }
 
-export function TableCart({ products }) {
+export function TableCart({ products, headings }) {
   return (
     <div className="table-cart -mx-4 w-[calc(100%+30px)] overflow-x-scroll">
       <div className="table-cart-box min-w-[790px] md:min-w-[900px]">
-        <TableRowHead
-          className="!flex [&>*:first-of-type]:w-1/2 [&>*:first-of-type]:grid [&>*:first-of-type]:grid-cols-[110px,1fr] [&>*:first-of-type]:gap-x-4"
-          headings={[
-            'product',
-            'price',
-            'status',
-            'add to cart',
-          ]}
-        />
+        {headings ? (
+          <TableRowHead
+            headings={headings}
+            className="overflow-x-none"
+          />
+        ) : (
+          <TableRowHead
+            className="!flex [&>*:first-of-type]:w-1/2 [&>*:first-of-type]:grid [&>*:first-of-type]:grid-cols-[110px,1fr] [&>*:first-of-type]:gap-x-4"
+            headings={[
+              'product',
+              'price',
+              'status',
+              'add to cart',
+            ]}
+          />
+        )}
 
         {products?.map(
           ({

@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 function ViewedProducts({ products }) {
   return (
-    <div className="viewed-products mt-5">
+    <div className="viewed-products mt-5 lg:mt-0">
       <h5 className="capitalize pb-2 border-b-2 text-2xl leading-[115%] border-b-[#222]">
         You have viewed
       </h5>
@@ -56,7 +56,7 @@ function MyProfile() {
   return (
     <div className="profile pt-16 relative">
       <Container className="relative z-10">
-        <div className="profile-content flex flex-col-reverse lg:flex-row lg:gap-x-8">
+        <div className="profile-content flex flex-col-reverse lg:flex-row lg:gap-x-16">
           <aside className="profile-aside mt-16 md:mt-0">
             <Subscribe className="lg:hidden z-[5]" />
             <ViewedProducts products={PRODUCT_DATA} />

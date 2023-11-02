@@ -1,7 +1,7 @@
 'use client';
 import { Tab } from '@headlessui/react';
 import clsx from 'clsx';
-import { TableRowHead } from './TableRowHead';
+import { TableCart } from './TableCart';
 
 function TabOrder({ tab }) {
   return (
@@ -65,7 +65,10 @@ function ProfileOrders() {
     <Tab.Panel>
       <div className="profile-orders">
         {/* <div className="profile-orders-row capitalize text-[#222] pb-2 mb-8 border-b-2 border-[#222] hidden md:flex justify-between md:items-center text-xl leading-[120%]"> */}
-        <TableRowHead
+        {/* <TableRowHead
+          headings={}
+        /> */}
+        <TableCart
           headings={[
             'date',
             'delivery address',
