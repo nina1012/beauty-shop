@@ -7,12 +7,14 @@ import Checkbox from '@/components/global/Checkbox';
 import InputField from '@/components/global/InputField';
 import { Container } from '@/components/layout/Container';
 import loginBg from '@/images/login-bg.png';
+import Image from 'next/image';
 import Link from 'next/link';
+import profileDecor from '@/images/profile-decor.jpeg';
 
 function Login() {
   return (
     <div className="login mt-16 md:mt-28">
-      <Container>
+      <Container className="relative z-10">
         <div
           className="login-form py-9 px-4 m-auto md:p-16 max-w-[570px] bg-no-repeat bg-cover border-[1px] border-[#eee]"
           style={{
@@ -37,12 +39,12 @@ function Login() {
             />
             <Checkbox />
             <Button className="w-full">Log in</Button>
-            <div className="buttons justify-between text-left leading-[170%] text-[#666] flex flex-col md:flex-row mt-2">
+            <div className="buttons justify-between text-left leading-[170%] text-[#666] flex flex-col md:flex-row mt-5">
               <span>
                 No account?
                 <Link
                   className="text-pink !ml-2"
-                  href="/register"
+                  href="/registration"
                 >
                   Register now
                 </Link>
@@ -54,6 +56,13 @@ function Login() {
           </form>
         </div>
       </Container>
+      <Image
+        src={profileDecor}
+        width={profileDecor?.width}
+        height={profileDecor?.height}
+        alt="decor"
+        className="hidden md:block absolute top-[3.5%] -left-3 w-[30%] -z-1"
+      />
     </div>
   );
 }
