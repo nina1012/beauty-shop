@@ -85,7 +85,9 @@ export const ProductItem = ({ product }) => {
       {/* info */}
       <div className="product-item-info mt-9 flex flex-col text-center text-[#222]">
         <Link href={`/product/${id}`}>
-          <span className="text-2xl mb-2">{name}</span>
+          <span className="text-2xl mb-2 font-tenor">
+            {name}
+          </span>
         </Link>
         <div className="product-item-cost flex justify-center items-center">
           <span className="text-[#999] line-through mr-2">

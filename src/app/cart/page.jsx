@@ -51,7 +51,7 @@ function Cart() {
               Goods on{' '}
               <span className="text-[#999]">$200.85</span>
             </div>
-            <div className="row mb-6 flex justify-between pb-4 text-base border-b-[1px] border-b-[#222]">
+            <div className="row mb-6 flex justify-between pb-4 text-base border-b-2 border-b-[#222]">
               Discount on promo code
               <span className="text-[#999]">No</span>
             </div>

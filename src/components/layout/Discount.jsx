@@ -21,11 +21,11 @@ export default function Discount({
       >
         <Container
           className={
-            'lg:px-10 text-left text-darkGray z-[1] md:text-right'
+            'lg:px-10 text-left text-darkGray z-[1] md:text-right font-lato'
           }
         >
           <div className="max-w-[465px] text-right md:text-left ml-auto">
-            <span className="text-[45px] md:text-6xl text-pink capitalize">
+            <span className="text-[45px] md:text-5xl font-saint leading-[60px] text-pink capitalize">
               {subheading}
             </span>
             <h2 className="text-6xl	md:text-[83px] mt-1 mb-8 capitalize">

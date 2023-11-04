@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -10,6 +12,11 @@ module.exports = {
       backgroundImage: {
         mainBg: "url('@/images/main-bg.jpeg')",
         mainBgSm: "url('@/images/main-bg-sm.jpg')",
+      },
+      fontFamily: {
+        lato: ['Lato', 'sans-serif'],
+        saint: ['Mrs Saint Delafield', 'cursive'],
+        tenor: ['Tenor Sans', 'sans-serif'],
       },
       colors: {
         darkGray: '#222',

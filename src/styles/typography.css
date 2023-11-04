@@ -1,5 +1,5 @@
 .typography {
-  color: theme(colors.primaryDarkBlue);
+  /* color: theme(colors.primaryDarkBlue);
   font-size: theme(fontSize.xl);
   line-height: theme(fontSize.xl[1].lineHeight);
 
@@ -17,10 +17,10 @@
   :where(.typography > *) {
     margin-top: theme(spacing.6);
     margin-bottom: theme(spacing.6);
-  }
+  } */
 
   /* Headings */
-  :where(h2) {
+  /* :where(h2) {
     font-weight: theme(fontWeight.semibold);
     font-family: theme(fontFamily.display);
     font-variation-settings: theme(fontFamily.display[1].fontVariationSettings);
@@ -36,14 +36,14 @@
     font-size: theme(fontSize.xl);
     line-height: theme(fontSize.xl[1].lineHeight);
     margin-top: theme(spacing.10);
-  }
+  } */
 
-  :where(h2 + h3) {
+  /* :where(h2 + h3) {
     margin-top: 0;
-  }
+  } */
 
   /* Lists */
-  :where(ul, ol) {
+  /* :where(ul, ol) {
     padding-left: 1.5rem;
   }
 
@@ -72,10 +72,10 @@
   :where(ol > li)::marker {
     font-size: theme(fontSize.base);
     font-weight: theme(fontWeight.semibold);
-  }
+  } */
 
   /* Tables */
-  :where(table) {
+  /* :where(table) {
     width: 100%;
     text-align: left;
     font-size: theme(fontSize.base);
@@ -100,10 +100,10 @@
 
   :where(:is(th, td):not(:last-child)) {
     padding-right: theme(spacing.6);
-  }
+  } */
 
   /* Code blocks */
-  :where(pre) {
+  /* :where(pre) {
     display: flex;
     background-color: theme(colors.primaryDarkBlue);
     border-radius: theme(borderRadius.4xl);
@@ -129,17 +129,17 @@
     @screen sm {
       padding: theme(spacing.10);
     }
-  }
+  } */
 
   /* <hr> */
-  :where(hr) {
+  /* :where(hr) {
     border-color: theme(colors.primaryDarkBlue / 0.1);
     margin-top: theme(spacing.24);
     margin-bottom: theme(spacing.24);
-  }
+  } */
 
   /* Inline text */
-  :where(a) {
+  /* :where(a) {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.15em;
@@ -163,16 +163,16 @@
 
   :where(h2 code, h3 code) {
     font-weight: theme(fontWeight.bold);
-  }
+  } */
 
   /* Figures */
-  :where(figure) {
+  /* :where(figure) {
     margin-top: theme(spacing.32);
     margin-bottom: theme(spacing.32);
-  }
+  } */
 
   /* Spacing overrides */
-  :where(.typography:first-child > :first-child),
+  /* :where(.typography:first-child > :first-child),
   :where(li > :first-child) {
     margin-top: 0 !important;
   }
@@ -181,4 +181,4 @@
   :where(li > :last-child) {
     margin-bottom: 0 !important;
   }
-}
+} */

@@ -20,12 +20,12 @@ export default function DetailBlock({ bgImg, notFound }) {
         })`,
       }}
       className={clsx(
-        'bg-no-repeat text-[#222] bg-cover md:bg-top relative text-center z-[1] pt-32 pb-16 md:pt-48 md:pb-28'
+        'bg-no-repeat text-[#222] font-lato bg-cover md:bg-top relative text-center z-[1] pt-32 pb-16 md:pt-48 md:pb-28'
       )}
     >
       <Container>
         <div className="content">
-          <h1 className="text-6xl mb-3 lg:text-7xl">
+          <h1 className="text-6xl font-tenor mb-3 lg:text-7xl">
             {notFound ? '404 Page' : page}
           </h1>
           {notFound ? (

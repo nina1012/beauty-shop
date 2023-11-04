@@ -32,7 +32,7 @@ export function Subscribe({ className }) {
             ></div>
           </div>
           <form className="text-[#222] z-10 relative">
-            <h3 className="text-3xl md:text-[40px]">
+            <h3 className="text-3xl md:text-[40px] font-tenor">
               Stay in touch
             </h3>
             <p className="text-[#666] my-2">

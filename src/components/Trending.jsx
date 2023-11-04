@@ -12,7 +12,7 @@ export function Trending() {
   ];
   return (
     <Section
-      subheading="Cosmetics"
+      subHeading="Cosmetics"
       heading="Trending Products"
     >
       <div className="section-content">

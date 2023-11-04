@@ -9,7 +9,7 @@ import topCatDecor from '@/images/top-categories-decor.png';
 export function TopCategories({ categories }) {
   return (
     <Section
-      subheading="Popular Collections"
+      subHeading="Popular Collections"
       heading="Top Categories"
       className="top-categories [&>*]:max-w-full"
     >
@@ -22,7 +22,7 @@ export function TopCategories({ categories }) {
           <Link
             key={category?.categoryName}
             href="/categories"
-            className="relative w-full mb-4 h-[345px] md:h-[355px] md:w-[calc(50%-8px)] lg:mb-2 lg:h-[500px] lg:w-[calc(33.3%-8px)] "
+            className="relative w-full font-lato mb-4 h-[345px] md:h-[355px] md:w-[calc(50%-8px)] lg:mb-2 lg:h-[500px] lg:w-[calc(33.3%-8px)] "
           >
             <Image
               src={category?.img.src}
@@ -31,7 +31,7 @@ export function TopCategories({ categories }) {
               height={category?.img?.height}
               className="w-full h-full object-cover"
             />
-            <div className="overlay-onHover opacity-0 hover:opacity-100 hover:bg-[rgba(34,34,34,0.4)] absolute top-0 left-0 w-full h-full flex flex-col gap-3 text-center justify-center items-center transition-opacity">
+            <div className="overlay-onHover opacity-0 hover:opacity-100 font-tenor hover:bg-[rgba(34,34,34,0.4)] absolute top-0 left-0 w-full h-full flex flex-col gap-3 text-center justify-center items-center transition-opacity">
               <h5
                 className={clsx(
                   'relative flex justify-center items-center text-[#222] bg-contain bg-no-repeat bg-center text-2xl w-full h-[66px]'

@@ -110,12 +110,12 @@ export default function Header() {
                   : 'hidden md:flex md:w-full'
               )}
             >
-              <ul className="navigation uppercase w-full flex flex-col items-start md:items-center md:flex-row text-sm md:text-xs md:ml-4">
+              <ul className="navigation lg:w-full uppercase w-full flex flex-col items-start md:items-center md:flex-row text-sm md:text-xs md:ml-4">
                 {navItems.map((item) => (
                   <li
                     key={item.path}
                     className={clsx(
-                      'mb-4 md:my-0 justify-start md:justify-stretch mx-2 hover:text-pink transition-colors'
+                      'mb-4 md:my-0 justify-start md:justify-stretch mx-2 hover:text-pink transition-colors md:mx-8'
                     )}
                   >
                     <Link href={item?.path}>
@@ -134,7 +134,7 @@ export default function Header() {
                 {options?.map((opt) => (
                   <li
                     key={opt.path}
-                    className="md:ml-4 text-base hover:text-pink transition-colors"
+                    className="md:ml-4 lg:ml-10 text-base hover:text-pink transition-colors"
                   >
                     <Link href={opt.path}>
                       {opt.path.includes('cart') ? (

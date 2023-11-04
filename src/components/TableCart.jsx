@@ -27,7 +27,7 @@ function TableRow({ children }) {
 
 export function TableCart({ products, headings }) {
   return (
-    <div className="table-cart -mx-4 w-[calc(100%+30px)] overflow-x-scroll">
+    <div className="table-cart -mx-4 md:mx-0 w-[calc(100%+30px)]">
       <div className="table-cart-box min-w-[790px] md:min-w-[900px]">
         {headings ? (
           <TableRowHead

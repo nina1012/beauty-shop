@@ -23,7 +23,7 @@ function Login() {
           }}
         >
           <form className="text-center">
-            <h3 className="capitalize mb-8 text-4xl">
+            <h3 className="capitalize font-tenor mb-8 text-4xl">
               Log in with
             </h3>
             <SocialMedia className="!justify-center" />

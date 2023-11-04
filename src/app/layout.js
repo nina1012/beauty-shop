@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       <body
         className={clsx(
           inter.className,
-          'flex min-h-full flex-col bg-white h-full'
+          'flex min-h-full font-lato flex-col bg-white h-full'
         )}
       >
         <Header />

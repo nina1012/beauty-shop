@@ -78,10 +78,10 @@ function Advantages() {
               >
                 {item?.icon}
               </div>
-              <h4 className="text-3xl capitalize mb-2">
+              <h4 className="text-3xl font-tenor font-normal capitalize mb-2">
                 {item?.name}
               </h4>
-              <p className="mx-auto md:mx-0 md:w-full text-[#666]">
+              <p className="mx-auto text-[15px] md:mx-0 leading-[25.5px] md:w-full text-[#666]">
                 {item?.description}
               </p>
             </div>
@@ -134,13 +134,13 @@ function InfoBlocks() {
               />
             </div>
             <div className="info-block-text pt-12 py-10 text-[#666] pl-0 lg:py-48 lg:px-5 lg:w-1/2">
-              <span className="capitalize text-pink text-4xl">
+              <span className="capitalize font-saint leading-[60px] text-pink text-4xl">
                 {block.subheading}
               </span>
-              <h2 className="text-4xl text-[#222] md:text-5xl capitalize my-2">
+              <h2 className="text-4xl font-tenor text-[#222] md:text-5xl capitalize my-2">
                 {block.heading}
               </h2>
-              <p className="description text-xl max-w-[456px]">
+              <p className="description text-xl max-w-[456px] my-4">
                 {block.description}
               </p>
               <p className="mt-2 lg:my-4 text-base">
@@ -219,7 +219,7 @@ function LatestNews() {
                 </div>
                 <div className="blog-item-title  md:text-4xl text-[#666] transition-all">
                   <Link
-                    className="block my-3 text-[#222] text-[22px]  hover:text-pink"
+                    className="block my-3 text-[#222] text-[22px] font-tenor hover:text-pink"
                     href={`/blog/${id}`}
                   >
                     {heading}
@@ -275,11 +275,11 @@ export default function Home() {
           className="main-block relative z-1 min-h-screen flex items-center justify-start w-full h-full py-[100px] bg-no-repeat bg-cover bg-center z-1"
         >
           <Container className="lg:px-5 text-darkGray z-[1]">
-            <div className="max-w-[575px] font-tenorSans lg:max-w-[650px]">
-              <span className="font-cursive text-[45px] md:text-6xl text-pink">
+            <div className="max-w-[575px] font-tenor lg:max-w-[650px]">
+              <span className="font-saint -ml-1 text-[45px] leading-[60px] md:text-6xl text-pink">
                 Professional
               </span>
-              <h1 className="text-6xl md:text-[83px] mt-1 mb-8">
+              <h1 className="text-6xl -ml-1 md:text-[83px]  mt-1 mb-8">
                 Beauty & Care
               </h1>
               <p className="max-w-[420px] text-black text-base leading-[150%]">
