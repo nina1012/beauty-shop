@@ -20,7 +20,7 @@ export function Section({
           <span className="font-saint text-[40px] md:text-5xl capitalize text-pink">
             {subHeading}
           </span>
-          <h2 className="text-[40px] md:text-5xl capitalize lg:text-6xl my-5">
+          <h2 className="text-[40px] md:text-5xl leading-[42px] capitalize lg:text-6xl my-5">
             {heading}
           </h2>
           <p className="max-w-[450px] mx-auto mt-8 text-sm md:text-base text-gray-600">

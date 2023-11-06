@@ -11,8 +11,10 @@ import {
   AiOutlineClose,
 } from 'react-icons/ai';
 import clsx from 'clsx';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Container } from './Container';
+import { motion, scroll } from 'framer-motion';
+import { RootLayoutContext } from '../RootLayout';
 
 export default function Header() {
   const navItems = [
@@ -59,6 +61,8 @@ export default function Header() {
   const [expanded, setExpanded] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
 
+  const { layout } = useContext(RootLayoutContext);
+
   const handleScroll = () => {
     if (window.scrollY >= 50) {
       setIsScrolling(true);
@@ -97,7 +101,7 @@ export default function Header() {
               'fixed top-0 left-0 w-full pt-5 py-2 bg-lightBeige'
           )}
         >
-          <Container className="flex items-center font-lato justify-between px-0">
+          <Container className="flex items-center font-lato justify-between !px-0">
             <div className="header-logo">
               <Link href="/">
                 <HeaderLogo />
@@ -115,7 +119,7 @@ export default function Header() {
                   <li
                     key={item.path}
                     className={clsx(
-                      'mb-4 md:my-0 justify-start md:justify-stretch mx-2 hover:text-pink transition-colors md:mx-8'
+                      'mb-4 md:my-0 justify-start md:justify-stretch mx-2 hover:text-pink transition-colors md:mx-6 lg:mx-8'
                     )}
                   >
                     <Link href={item?.path}>

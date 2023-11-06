@@ -3,6 +3,7 @@ import '../styles/globals.css';
 import { Inter } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { RootLayout } from '@/components/RootLayout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,7 +16,7 @@ export const metadata = {
     'Beauty shop is a website made using react and nextjs',
 };
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
   return (
     <html
       lang="en"
@@ -27,11 +28,7 @@ export default function RootLayout({ children }) {
           'flex min-h-full font-lato flex-col bg-white h-full'
         )}
       >
-        <Header />
-        <main className="content min-w-[320px] text-left w-full">
-          {children}
-        </main>
-        <Footer />
+        <RootLayout>{children}</RootLayout>
       </body>
     </html>
   );
