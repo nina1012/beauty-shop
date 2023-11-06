@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { HeaderLogo } from '../Logos';
-import { RxHamburgerMenu } from 'react-icons/rx';
 import { PiMagnifyingGlassLight } from 'react-icons/pi';
 import {
   AiOutlineUser,
@@ -13,8 +12,33 @@ import {
 import clsx from 'clsx';
 import { useState, useEffect, useContext } from 'react';
 import { Container } from './Container';
-import { motion, scroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { RootLayoutContext } from '../RootLayout';
+
+function XIcon(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="m5.636 4.223 14.142 14.142-1.414 1.414L4.222 5.637z" />
+      <path d="M4.222 18.363 18.364 4.22l1.414 1.414L5.636 19.777z" />
+    </svg>
+  );
+}
+
+function MenuIcon(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M2 6h20v2H2zM2 16h20v2H2z" />
+    </svg>
+  );
+}
 
 export default function Header() {
   const navItems = [
@@ -96,7 +120,7 @@ export default function Header() {
         </div>
         <div
           className={clsx(
-            'header-content flex justify-between items-center pt-[50px] px-4',
+            'header-content transition-all flex justify-between items-center pt-[50px] px-4',
             isScrolling &&
               'fixed top-0 left-0 w-full pt-5 py-2 bg-lightBeige'
           )}
@@ -107,10 +131,36 @@ export default function Header() {
                 <HeaderLogo />
               </Link>
             </div>
-            <div
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: -100,
+              }}
+              animate={
+                expanded && layout === 'mobile'
+                  ? {
+                      opacity: 1,
+                      x: 0,
+                    }
+                  : {
+                      opacity: 1,
+                      x: 0,
+                    }
+                  ? layout === 'tablet'
+                  : {
+                      opacity: 0,
+                      x: -100,
+                    }
+              }
+              exit={{ opacity: 0, x: -100 }}
+              transition={{
+                duration: 0.2,
+                ease: 'easeOut',
+                x: { duration: 0.3 },
+              }}
               className={clsx(
                 expanded
-                  ? 'header-box fixed top-0 left-0 w-[230px] h-full bg-white md:bg-transparent text-darkGray z-[11] flex flex-col justify-start items-start pt-12 px-8 md:pt-0 md:px-0 md:relative md:w-full md:flex-row md:h-auto'
+                  ? 'header-box fixed top-0 left-0 w-[230px] transition-all h-full bg-white md:bg-transparent text-darkGray z-[11] flex flex-col justify-start items-start pt-12 px-8 md:pt-0 md:px-0 md:relative md:w-full md:flex-row md:h-auto'
                   : 'hidden md:flex md:w-full'
               )}
             >
@@ -155,15 +205,20 @@ export default function Header() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
             <button
+              type="button"
               onClick={() => setExpanded(!expanded)}
-              className="block md:hidden"
+              aria-expanded={expanded.toString()}
+              className={clsx(
+                'group -m-2.5 block md:hidden  transition  rounded-full bg-white/70 hover:bg-white p-2'
+              )}
+              aria-label="Toggle navigation"
             >
               {expanded ? (
-                <AiOutlineClose />
+                <XIcon className="w-6 h-6" />
               ) : (
-                <RxHamburgerMenu className="text-xl" />
+                <MenuIcon className="w-6 h-6" />
               )}
             </button>
           </Container>
