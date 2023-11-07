@@ -15,7 +15,6 @@ import mainTextDecor from '@/images/main-text-decor.png';
 
 import discountBg from '@/images/discount-bg.jpeg';
 import { Button } from '@/components/global/Button';
-import { ProductItems } from '@/components/product/ProductItems';
 import Link from 'next/link';
 
 import { AiOutlineArrowRight } from 'react-icons/ai';
@@ -37,6 +36,10 @@ import Discount from '@/components/layout/Discount';
 import { TopCategories } from '@/components/TopCategories';
 import { Subscribe } from '@/components/Subscribe';
 import { Trending } from '@/components/Trending';
+import {
+  FadeIn,
+  FadeInStagger,
+} from '@/components/FadeIn';
 
 function Advantages() {
   const items = [
@@ -62,31 +65,33 @@ function Advantages() {
   return (
     <div className="advantages pt-16">
       <Container>
-        <div className="advantages-items gap-4 grid md:grid-cols-3 justify-center items-center md:flex-row">
-          {items?.map((item) => (
-            <div
-              key={item?.name}
-              className="advantages-item px-2 text-center relative"
-            >
+        <FadeInStagger>
+          <div className="advantages-items gap-4 grid md:grid-cols-3 justify-center items-center md:flex-row">
+            {items?.map((item) => (
               <div
-                className={clsx(
-                  'advantages-item-icon text-7xl [&>*]:mx-auto mb-10 text-pink bg-no-repeat bg-contain bg-center relative'
-                )}
-                style={{
-                  backgroundImage: `url(${mainTextDecor.src})`,
-                }}
+                key={item?.name}
+                className="advantages-item px-2 text-center relative"
               >
-                {item?.icon}
+                <div
+                  className={clsx(
+                    'advantages-item-icon text-7xl [&>*]:mx-auto mb-10 text-pink bg-no-repeat bg-contain bg-center relative'
+                  )}
+                  style={{
+                    backgroundImage: `url(${mainTextDecor.src})`,
+                  }}
+                >
+                  {item?.icon}
+                </div>
+                <h4 className="text-3xl font-tenor font-normal capitalize mb-2">
+                  {item?.name}
+                </h4>
+                <p className="mx-auto text-[15px] md:mx-0 leading-[25.5px] md:w-full text-[#666]">
+                  {item?.description}
+                </p>
               </div>
-              <h4 className="text-3xl font-tenor font-normal capitalize mb-2">
-                {item?.name}
-              </h4>
-              <p className="mx-auto text-[15px] md:mx-0 leading-[25.5px] md:w-full text-[#666]">
-                {item?.description}
-              </p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </FadeInStagger>
       </Container>
     </div>
   );
@@ -275,20 +280,22 @@ export default function Home() {
           className="main-block relative z-1 min-h-screen flex items-center justify-start w-full h-full py-[100px] bg-no-repeat bg-cover bg-center z-1"
         >
           <Container className="lg:px-5 text-darkGray z-[1]">
-            <div className="max-w-[575px] font-tenor lg:max-w-[650px]">
-              <span className="font-saint -ml-1 text-[45px] leading-[60px] md:text-6xl text-pink">
-                Professional
-              </span>
-              <h1 className="text-6xl -ml-1 md:text-[83px]  mt-1 mb-8">
-                Beauty & Care
-              </h1>
-              <p className="max-w-[420px] text-black text-base leading-[150%]">
-                Nourish your skin with toxin-free cosmetic
-                products. With the offers that you can’t
-                refuse.
-              </p>
-              <Button className="mt-8">Show now</Button>
-            </div>
+            <FadeIn>
+              <div className="max-w-[575px] font-tenor lg:max-w-[650px]">
+                <span className="font-saint -ml-1 text-[45px] leading-[60px] md:text-6xl text-pink">
+                  Professional
+                </span>
+                <h1 className="text-6xl -ml-1 md:text-[83px]  mt-1 mb-8">
+                  Beauty & Care
+                </h1>
+                <p className="max-w-[420px] text-black text-base leading-[150%]">
+                  Nourish your skin with toxin-free
+                  cosmetic products. With the offers that
+                  you can’t refuse.
+                </p>
+                <Button className="mt-8">Show now</Button>
+              </div>
+            </FadeIn>
           </Container>
           <Image
             src={mainBlockDecor}

@@ -137,25 +137,18 @@ export default function Header() {
                 x: -100,
               }}
               animate={
-                expanded && layout === 'mobile'
-                  ? {
-                      opacity: 1,
-                      x: 0,
-                    }
-                  : {
-                      opacity: 1,
-                      x: 0,
-                    }
-                  ? layout === 'tablet'
-                  : {
-                      opacity: 0,
-                      x: -100,
-                    }
+                layout === 'mobile'
+                  ? expanded
+                    ? { opacity: 1, x: 0 }
+                    : { opacity: 0, x: -100 }
+                  : layout !== 'mobile'
+                  ? { opacity: 1, x: 0 }
+                  : { opacity: 0 }
               }
-              exit={{ opacity: 0, x: -100 }}
               transition={{
                 duration: 0.2,
                 ease: 'easeOut',
+                loop: 'Infinity',
                 x: { duration: 0.3 },
               }}
               className={clsx(

@@ -6,6 +6,7 @@ import { Navigation } from 'swiper/modules';
 
 import 'swiper/css/navigation';
 import 'swiper/css';
+import { motion } from 'framer-motion';
 
 import clsx from 'clsx';
 import Image from 'next/image';
@@ -102,7 +103,10 @@ export const ProductItem = ({ product }) => {
 
 export const ProductItems = () => {
   return (
-    <div>
+    <motion.div
+      layoutScroll
+      style={{ overflow: 'scroll' }}
+    >
       <Swiper
         slidesPerView={1}
         spaceBetween={0}
@@ -133,6 +137,6 @@ export const ProductItems = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </motion.div>
   );
 };

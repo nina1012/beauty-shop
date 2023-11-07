@@ -32,9 +32,9 @@ export function Footer() {
                   payment2,
                   payment3,
                   payment4,
-                ]?.map((image) => (
+                ]?.map((image, idx) => (
                   <Image
-                    key={image}
+                    key={idx}
                     src={image}
                     width={50}
                     height={30}
