@@ -1,4 +1,6 @@
 import DetailBlock from '@/components/DetailBlock';
+import { FadeIn } from '@/components/FadeIn';
+import InstaPhotos from '@/components/InstaPhotos';
 import { TopCategories } from '@/components/TopCategories';
 import topCat1 from '@/images/top-categories-img1.jpg';
 import topCat2 from '@/images/top-categories-img2.jpg';
@@ -25,7 +27,10 @@ export default async function Categories() {
   return (
     <>
       <DetailBlock />
-      <TopCategories categories={categories} />
+      <FadeIn>
+        <TopCategories categories={categories} />
+      </FadeIn>
+      <InstaPhotos />
     </>
   );
 }

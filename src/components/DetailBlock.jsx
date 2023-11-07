@@ -1,10 +1,12 @@
 'use client';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 import bgImage from '@/images/detail-main-bg.jpeg';
 import { Container } from './layout/Container';
 import Link from 'next/link';
+import { FadeIn } from './FadeIn';
 
 export default function DetailBlock({ bgImg, notFound }) {
   const pathname = usePathname();
@@ -13,7 +15,10 @@ export default function DetailBlock({ bgImg, notFound }) {
     pathname.slice(2, pathname.length);
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ easings: ['easeIn', 'easeOut'] }}
       style={{
         backgroundImage: `url(${
           bgImg?.src || bgImage?.src
@@ -24,25 +29,27 @@ export default function DetailBlock({ bgImg, notFound }) {
       )}
     >
       <Container>
-        <div className="content">
-          <h1 className="text-6xl font-tenor mb-3 lg:text-7xl">
-            {notFound ? '404 Page' : page}
-          </h1>
-          {notFound ? (
-            <span className="text-[#666]">Oops!</span>
-          ) : (
-            <ul className="breadcrumbs flex flex-wrap justify-center">
-              <li className="mx-3">
-                <Link href="/">Home</Link>
-              </li>
-              <span>-</span>
-              <li className="mx-3 text-pink">
-                <Link href={`/${page}`}>{page}</Link>
-              </li>
-            </ul>
-          )}
-        </div>
+        <FadeIn>
+          <div className="content">
+            <h1 className="text-6xl font-tenor mb-3 lg:text-7xl">
+              {notFound ? '404 Page' : page}
+            </h1>
+            {notFound ? (
+              <span className="text-[#666]">Oops!</span>
+            ) : (
+              <ul className="breadcrumbs flex flex-wrap justify-center">
+                <li className="mx-3">
+                  <Link href="/">Home</Link>
+                </li>
+                <span>-</span>
+                <li className="mx-3 text-pink">
+                  <Link href={`/${page}`}>{page}</Link>
+                </li>
+              </ul>
+            )}
+          </div>
+        </FadeIn>
       </Container>
-    </div>
+    </motion.div>
   );
 }

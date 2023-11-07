@@ -80,9 +80,9 @@ export function FAQDisclosure() {
                 {faq.question}
                 <span
                   className={clsx(
-                    'btn w-10 h-10 absolute right-0 -bottom-5 z-[1] bg-lightPurple border-[1px] border-[#eee] rounded-full text-center text-sm origin-center before:absolute after:absolute before:w-2 after:w-[2px] before:h-[2px] after:h-2 before:bg-[#222] after:bg-[#222] before:top-1/2 after:top-1/2 before:left-1/2 after:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 after:-translate-x-1/2 after:-translate-y-1/2',
+                    'btn w-10 h-10 absolute right-0 -bottom-5 transition-all z-[1] bg-lightPurple border-[1px] border-[#eee] rounded-full text-center text-sm origin-center before:absolute after:absolute before:w-2 after:w-[2px] before:h-[2px] after:h-2 before:bg-[#222] after:bg-[#222] before:top-1/2 after:top-1/2 before:left-1/2 after:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 after:-translate-x-1/2 after:-translate-y-1/2',
                     open &&
-                      'after:w-0 after:h-0 !bg-lightBeige'
+                      '!after:h-0 !after:w-0 !bg-lightBeige'
                   )}
                 >
                   {' '}

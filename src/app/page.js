@@ -129,37 +129,40 @@ function InfoBlocks() {
           )}
         >
           <Container className="pt-10 flex flex-col lg:flex-row w-full lg:px-0 lg:pt-0">
-            <div className="info-block-img relative w-full h-[335px] lg:h-full lg:absolute lg:top-0 lg:left-1/2 lg:w-1/2">
-              <Image
-                src={block.image?.src}
-                alt=""
-                height={block.image.height}
-                width={block.image.width}
-                className="!w-full !h-full object-cover"
-              />
-            </div>
-            <div className="info-block-text pt-12 py-10 text-[#666] pl-0 lg:py-48 lg:px-5 lg:w-1/2">
-              <span className="capitalize font-saint leading-[60px] text-pink text-4xl">
-                {block.subheading}
-              </span>
-              <h2 className="text-4xl font-tenor text-[#222] md:text-5xl capitalize my-2">
-                {block.heading}
-              </h2>
-              <p className="description text-xl max-w-[456px] my-4">
-                {block.description}
-              </p>
-              <p className="mt-2 lg:my-4 text-base">
-                Non aliqua reprehenderit reprehenderit
-                culpa laboris nulla minim anim velit
-                adipisicing ea aliqua alluptate sit do
-                do.Non aliqua reprehenderit reprehenderit
-                culpa laboris nulla minim anim velit
-                adipisicing ea aliqua alluptate sit do
-                do.Non aliqua reprehenderit reprehenderit
-                culpa laboris nulla minim.
-              </p>
-              <Button className="mt-8">Shop now</Button>
-            </div>
+            <FadeIn>
+              <div className="info-block-img relative w-full h-[335px] lg:h-full lg:absolute lg:top-0 lg:left-1/2 lg:w-1/2">
+                <Image
+                  src={block.image?.src}
+                  alt=""
+                  height={block.image.height}
+                  width={block.image.width}
+                  className="!w-full !h-full object-cover"
+                />
+              </div>
+              <div className="info-block-text pt-12 py-10 text-[#666] pl-0 lg:py-48 lg:px-5 lg:w-1/2">
+                <span className="capitalize font-saint leading-[60px] text-pink text-4xl">
+                  {block.subheading}
+                </span>
+                <h2 className="text-4xl font-tenor text-[#222] md:text-5xl capitalize my-2">
+                  {block.heading}
+                </h2>
+                <p className="description text-xl max-w-[456px] my-4">
+                  {block.description}
+                </p>
+                <p className="mt-2 lg:my-4 text-base">
+                  Non aliqua reprehenderit reprehenderit
+                  culpa laboris nulla minim anim velit
+                  adipisicing ea aliqua alluptate sit do
+                  do.Non aliqua reprehenderit
+                  reprehenderit culpa laboris nulla minim
+                  anim velit adipisicing ea aliqua
+                  alluptate sit do do.Non aliqua
+                  reprehenderit reprehenderit culpa
+                  laboris nulla minim.
+                </p>
+                <Button className="mt-8">Shop now</Button>
+              </div>
+            </FadeIn>
           </Container>
         </div>
       ))}
@@ -190,60 +193,62 @@ function LatestNews() {
       heading="the latest news at BeautyShop"
     >
       <Container className="mx-auto !px-0">
-        <div className="blog-items flex flex-col md:flex-row gap-8">
-          {blogs?.map(
-            ({ id, image, heading, description }) => (
-              <div
-                key={id}
-                className="blog-item md:w-1/2"
-              >
-                <div className="blog-item-img h-[220px] lg:h-[300px] relative">
-                  <Link
-                    href={`/blog/${id}`}
-                    className="hover:opacity-80 transition-all"
-                  >
-                    <Image
-                      src={image}
-                      width={image.width}
-                      height={image.height}
-                      alt=""
-                      className="w-full h-full object-cover"
-                    />
-                    <span
-                      style={{
-                        backgroundImage: `url(${blogDateDecor.src})`,
-                      }}
-                      className="absolute w-[77px] h-[66px] right-[35px] top-[23px] flex flex-col text-center justify-center items-center z-[1] bg-center bg-no-repeat"
+        <FadeIn>
+          <div className="blog-items flex flex-col md:flex-row gap-8">
+            {blogs?.map(
+              ({ id, image, heading, description }) => (
+                <div
+                  key={id}
+                  className="blog-item md:w-1/2"
+                >
+                  <div className="blog-item-img h-[220px] lg:h-[300px] relative">
+                    <Link
+                      href={`/blog/${id}`}
+                      className="hover:opacity-80 transition-all"
                     >
-                      june
-                      <span className="text-2xl font-semibold">
-                        21
+                      <Image
+                        src={image}
+                        width={image.width}
+                        height={image.height}
+                        alt=""
+                        className="w-full h-full object-cover"
+                      />
+                      <span
+                        style={{
+                          backgroundImage: `url(${blogDateDecor.src})`,
+                        }}
+                        className="absolute w-[77px] h-[66px] right-[35px] top-[23px] flex flex-col text-center justify-center items-center z-[1] bg-center bg-no-repeat"
+                      >
+                        june
+                        <span className="text-2xl font-semibold">
+                          21
+                        </span>
                       </span>
-                    </span>
-                  </Link>
+                    </Link>
+                  </div>
+                  <div className="blog-item-title  md:text-4xl text-[#666] transition-all">
+                    <Link
+                      className="block my-3 text-[#222] text-[22px] font-tenor hover:text-pink"
+                      href={`/blog/${id}`}
+                    >
+                      {heading}
+                    </Link>
+                    <p className="mb-5 text-sm">
+                      {description}
+                    </p>
+                    <Link
+                      href={`blog/${id}`}
+                      className="flex gap-2 group items-center text-sm text-pink transition-all origin-center"
+                    >
+                      Read More
+                      <AiOutlineArrowRight className="group-hover:translate-x-2 transition-all" />
+                    </Link>
+                  </div>
                 </div>
-                <div className="blog-item-title  md:text-4xl text-[#666] transition-all">
-                  <Link
-                    className="block my-3 text-[#222] text-[22px] font-tenor hover:text-pink"
-                    href={`/blog/${id}`}
-                  >
-                    {heading}
-                  </Link>
-                  <p className="mb-5 text-sm">
-                    {description}
-                  </p>
-                  <Link
-                    href={`blog/${id}`}
-                    className="flex gap-2 group items-center text-sm text-pink transition-all origin-center"
-                  >
-                    Read More
-                    <AiOutlineArrowRight className="group-hover:translate-x-2 transition-all" />
-                  </Link>
-                </div>
-              </div>
-            )
-          )}
-        </div>
+              )
+            )}
+          </div>
+        </FadeIn>
       </Container>
       <div className="latest-news-button mt-10 md:mt-16 flex justify-center text-center">
         <Button

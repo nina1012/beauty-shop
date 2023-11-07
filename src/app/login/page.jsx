@@ -10,51 +10,54 @@ import loginBg from '@/images/login-bg.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import profileDecor from '@/images/profile-decor.jpeg';
+import { FadeIn } from '@/components/FadeIn';
 
 function Login() {
   return (
     <div className="login mt-16 md:mt-28">
       <Container className="relative z-10">
-        <div
-          className="login-form py-9 px-4 m-auto md:p-16 max-w-[570px] bg-no-repeat bg-cover border-[1px] border-[#eee]"
-          style={{
-            backgroundImage: `url(${loginBg.src})`,
-            backgroundPosition: '50%',
-          }}
-        >
-          <form className="text-center">
-            <h3 className="capitalize font-tenor mb-8 text-4xl">
-              Log in with
-            </h3>
-            <SocialMedia className="!justify-center" />
-            <InputField
-              label="Enter your email or nickname"
-              type="email"
-              className="mb-2 md:mb-4"
-            />
-            <InputField
-              label="Enter your password"
-              type="password"
-              className="mb-2 md:mb-4"
-            />
-            <Checkbox />
-            <Button className="w-full">Log in</Button>
-            <div className="buttons justify-between text-left leading-[170%] text-[#666] flex flex-col md:flex-row mt-5">
-              <span>
-                No account?
-                <Link
-                  className="text-pink !ml-2"
-                  href="/registration"
-                >
-                  Register now
+        <FadeIn>
+          <div
+            className="login-form py-9 px-4 m-auto md:p-16 max-w-[570px] bg-no-repeat bg-cover border-[1px] border-[#eee]"
+            style={{
+              backgroundImage: `url(${loginBg.src})`,
+              backgroundPosition: '50%',
+            }}
+          >
+            <form className="text-center">
+              <h3 className="capitalize font-tenor mb-8 text-4xl">
+                Log in with
+              </h3>
+              <SocialMedia className="!justify-center" />
+              <InputField
+                label="Enter your email or nickname"
+                type="email"
+                className="mb-2 md:mb-4"
+              />
+              <InputField
+                label="Enter your password"
+                type="password"
+                className="mb-2 md:mb-4"
+              />
+              <Checkbox />
+              <Button className="w-full">Log in</Button>
+              <div className="buttons justify-between text-left leading-[170%] text-[#666] flex flex-col md:flex-row mt-5">
+                <span>
+                  No account?
+                  <Link
+                    className="text-pink !ml-2"
+                    href="/registration"
+                  >
+                    Register now
+                  </Link>
+                </span>
+                <Link className="text-pink" href="/">
+                  Lost your password?
                 </Link>
-              </span>
-              <Link className="text-pink" href="/">
-                Lost your password?
-              </Link>
-            </div>
-          </form>
-        </div>
+              </div>
+            </form>
+          </div>
+        </FadeIn>
       </Container>
       <Image
         src={profileDecor}

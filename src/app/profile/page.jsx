@@ -7,6 +7,7 @@ import { Tabs } from '@/components/Tabs';
 import { Subscribe } from '@/components/Subscribe';
 import { PRODUCT_DATA } from '@/components/product/ProductsData';
 import Link from 'next/link';
+import { FadeIn } from '@/components/FadeIn';
 
 function ViewedProducts({ products }) {
   return (
@@ -56,23 +57,25 @@ function MyProfile() {
   return (
     <div className="profile pt-16 relative">
       <Container className="relative z-10">
-        <div className="profile-content flex flex-col-reverse lg:flex-row lg:gap-x-16">
-          <aside className="profile-aside mt-16 md:mt-0">
-            <Subscribe className="lg:hidden z-[5]" />
-            <ViewedProducts products={PRODUCT_DATA} />
-          </aside>
-          <div className="profile-main lg:w-full">
-            <div className="tab-wrap">
-              <Tabs
-                tabs={[
-                  'My info',
-                  'My orders',
-                  'Wishlist',
-                ]}
-              />
+        <FadeIn>
+          <div className="profile-content flex flex-col-reverse lg:flex-row lg:gap-x-16">
+            <aside className="profile-aside mt-16 md:mt-0">
+              <Subscribe className="lg:hidden z-[5]" />
+              <ViewedProducts products={PRODUCT_DATA} />
+            </aside>
+            <div className="profile-main lg:w-full">
+              <div className="tab-wrap">
+                <Tabs
+                  tabs={[
+                    'My info',
+                    'My orders',
+                    'Wishlist',
+                  ]}
+                />
+              </div>
             </div>
           </div>
-        </div>
+        </FadeIn>
       </Container>
       <Image
         src={profileDecor}

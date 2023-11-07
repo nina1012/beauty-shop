@@ -11,6 +11,7 @@ import discountBg from '@/images/discount-bg3.jpeg';
 import InputField from '@/components/global/InputField';
 import { Button } from '@/components/global/Button';
 import { InfoBoxes } from '@/components/InfoBoxes';
+import { FadeIn } from '@/components/FadeIn';
 
 function Map() {
   return (
@@ -51,35 +52,38 @@ export default async function Contact() {
       <InfoBoxes details={details} />
       <div className="contacts-info pt-16 pb-12 md:pt-10">
         <Container className="">
-          <div className="contacts-info-content flex flex-col md:flex-row gap-4 md:gap-10 lg:gap-20 md:justify-between">
-            <div className="contacts-info-text">
-              <h4 className="text-3xl mb-5 leading-[130%]">
-                We take care of you
-              </h4>
-              <p className="text-[#666] leading-[170%] tracking-[0.15px] text-[15px]">
-                Email us if you have any questions, we
-                will be sure to contact you and find a
-                solution. Also, our managers will help you
-                choose the product that suits you best, at
-                the best price. From year to year, the
-                BeShop network develops and improves,
-                taking into account all consumer needs and
-                market trends. But for us, the concern
-                remains that when coming to the BeShop
-                store, customers do not have questions
-                about the convenience and comfort of
-                shopping, product quality and the level of
-                professionalism of sales consultants.
-              </p>
+          <FadeIn>
+            <div className="contacts-info-content flex flex-col md:flex-row gap-4 md:gap-10 lg:gap-20 md:justify-between">
+              <div className="contacts-info-text">
+                <h4 className="text-3xl mb-5 leading-[130%]">
+                  We take care of you
+                </h4>
+                <p className="text-[#666] leading-[170%] tracking-[0.15px] text-[15px]">
+                  Email us if you have any questions, we
+                  will be sure to contact you and find a
+                  solution. Also, our managers will help
+                  you choose the product that suits you
+                  best, at the best price. From year to
+                  year, the BeShop network develops and
+                  improves, taking into account all
+                  consumer needs and market trends. But
+                  for us, the concern remains that when
+                  coming to the BeShop store, customers do
+                  not have questions about the convenience
+                  and comfort of shopping, product quality
+                  and the level of professionalism of
+                  sales consultants.
+                </p>
+              </div>
+              <div className="socials flex flex-col justify-center">
+                <div>Find us here:</div>
+                <SocialMedia
+                  className="gap-2"
+                  invert={false}
+                />
+              </div>
             </div>
-            <div className="socials flex flex-col justify-center">
-              <div>Find us here:</div>
-              <SocialMedia
-                className="gap-2"
-                invert={false}
-              />
-            </div>
-          </div>
+          </FadeIn>
         </Container>
       </div>
       <MainLogos />

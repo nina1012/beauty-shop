@@ -4,6 +4,7 @@ import InstaPhotos from '@/components/InstaPhotos';
 import { Button } from '@/components/global/Button';
 import { Trending } from '@/components/Trending';
 import { TableCart } from '@/components/TableCart';
+import { FadeIn } from '@/components/FadeIn';
 
 function Wishlist() {
   return (
@@ -93,11 +94,13 @@ function Wishlist() {
             )}
           </div>
         </div> */}
-        <TableCart />
-        <div className="wishlist-buttons gap-4 flex flex-col md:flex-row w-full md:w-auto mt-16 [&>*]:ml-2">
-          <Button invert={true}>Clear wishlist</Button>
-          <Button>Go shopping</Button>
-        </div>
+        <FadeIn>
+          <TableCart />
+          <div className="wishlist-buttons gap-4 flex flex-col md:flex-row w-full md:w-auto mt-16 [&>*]:ml-2">
+            <Button invert={true}>Clear wishlist</Button>
+            <Button>Go shopping</Button>
+          </div>
+        </FadeIn>
       </Container>
     </div>
   );
